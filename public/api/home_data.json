@@ -1,0 +1,32 @@
+{
+    "code": 0,
+    "data": {
+        "banner": [
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png"
+        ],
+        "tags": [
+            {
+                "title": "实力",
+                "desc": "专注六年\n战略合作资源\n中国独家代理"
+            },
+            {
+                "title": "背书",
+                "desc": "官方机构\n战略合作资源\n中国独家代理"
+            },
+            {
+                "title": "优势",
+                "desc": "项目优势\n战略合作资源\n中国独家代理"
+            }
+        ],
+        "project_List": [
+            {
+                "img": "http://sdfs2/ipg",
+                "desc": "sdfssdfe sdf sdf se sfdsf "
+
+            }
+        ]
+    }
+}
