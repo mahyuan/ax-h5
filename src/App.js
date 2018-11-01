@@ -12,7 +12,7 @@ class App extends PureComponent {
                 <Fragment>
                     <Route path="/" exact component={Home}></Route>
                 </Fragment>
-        </BrowserRouter>
+            </BrowserRouter>
         </Provider>
     );
   }

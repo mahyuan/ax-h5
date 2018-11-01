@@ -1,10 +1,18 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import Banner from '../../components/banner';
 
 class Home extends PureComponent {
     render() {
+        const features = [];
         return (
-            <div>home</div>
+            <div>
+                <Banner></Banner>
+                {
+                    features
+                }
+                <span>hemo</span>
+            </div>
         )
     }
 }
