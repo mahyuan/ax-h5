@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './assets/reset';
-import './middleware/setREM';
+require('./assets/reset.css');
+require('./middleware/setREM');
 
 ReactDOM.render(<App />, document.getElementById('root'));

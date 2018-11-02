@@ -1,0 +1,34 @@
+{
+    "code": 0,
+    "data": {
+        "banner": [
+            "https://upload.jianshu.io/admin_banners/web_images/4533/fc384bd68d23df5114c41c3ef12ba12dd000e244.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4548/261804ae4ab744a7148bc40ef9da8e13850e6fdf.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4524/65fb6e8f81ccbbc7dacf5c380e0366a003ba7881.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4514/a9212731b77ad524cb832c35d314348ec0b66235.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4539/814816838070065013af51fac80e6a03e453a660.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4546/dd55f322074ccec0be40c927e0705ef137f848b2.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
+            "https://upload.jianshu.io/admin_banners/web_images/4537/e4fc8843fabbf17e6f5660eea8ce0661b00b3089.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+        ],
+        "tags": [
+            {
+                "title": "实力",
+                "desc": "专注六年\n战略合作资源\n中国独家代理"
+            },
+            {
+                "title": "背书",
+                "desc": "官方机构\n战略合作资源\n中国独家代理"
+            },
+            {
+                "title": "优势",
+                "desc": "项目优势\n战略合作资源\n中国独家代理"
+            }
+        ],
+        "project_List": [
+            {
+                "img": "http://sdfs2/ipg",
+                "desc": "sdfssdfe sdf sdf se sfdsf "
+            }
+        ]
+    }
+}

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Banner from '../../components/banner';
+import { getHomeDataAction } from './store/actionCreators';
 
 class Home extends PureComponent {
     render() {
@@ -15,6 +16,9 @@ class Home extends PureComponent {
             </div>
         )
     }
+    componentDidMount() {
+        this.props.getInit();
+    }
 }
 
 const mapState = (state) => ({
@@ -23,7 +27,11 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => {
     return {
+        getInit() {
+            let action = getHomeDataAction();
+            dispatch(action);
 
+        }
     }
 }
 
