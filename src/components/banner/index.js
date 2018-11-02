@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import {
     BannerWrap
-} from '../pages/home/style';
+} from './style';
 
 class Banner extends PureComponent {
     render() {

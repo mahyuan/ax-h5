@@ -3,7 +3,7 @@ import actionTypes from "./actionTypes";
 
 const defaultState = fromJS({
     banner: [],
-    tags: [],
+    company_profile: [],
     project_List: []
 })
 
@@ -13,7 +13,7 @@ export default ( state = defaultState, action ) => {
             let { banner, tags, project_List } = action.data;
             return state.merge({
                 banner: fromJS(banner),
-                tags: fromJS(tags),
+                company_profile: fromJS(company_profile),
                 project_List: fromJS(project_List),
             })
         default:

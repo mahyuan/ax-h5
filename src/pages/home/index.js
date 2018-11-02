@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Banner from '../../components/banner';
+import Banner from '../../components/banner/index';
 import { getHomeDataAction } from './store/actionCreators';
 
 class Home extends PureComponent {
