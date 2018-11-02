@@ -6,13 +6,14 @@ import {
 
 class Banner extends PureComponent {
     render() {
+        let { banner } = this.props;
         return (
             <BannerWrap>banner</BannerWrap>
         )
     }
 }
 const mapState = (state) => ({
-    
+    banner: state.getIn(['home', 'banner'])
 })
 
 const mapDispatch = (dispatch) => ({

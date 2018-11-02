@@ -1,19 +1,27 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Banner from '../../components/banner/index';
 import { getHomeDataAction } from './store/actionCreators';
+import Banner from '../../components/banner/index';
+import Profile from '../../components/profile/index';
+import Project from '../../components/project/index';
+import { 
+    HomeWrap
+} from './style';
 
 class Home extends PureComponent {
     render() {
         const features = [];
         return (
-            <div>
+            <HomeWrap>
                 <Banner></Banner>
-                {
-                    features
-                }
-                <span>hemo</span>
-            </div>
+                <Profile></Profile>
+                <div className="projectWrap">
+                    <p>热门推荐</p>
+                    <Project></Project>
+                    <p>优质项目</p>
+                    <Project></Project>
+                </div>
+            </HomeWrap>
         )
     }
     componentDidMount() {
@@ -22,7 +30,7 @@ class Home extends PureComponent {
 }
 
 const mapState = (state) => ({
-
+    
 })
 
 const mapDispatch = (dispatch) => {
