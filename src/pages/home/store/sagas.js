@@ -1,3 +1,4 @@
+/*
 import { takeEvery, put } from 'redux-saga/effects';
 import actionTypes from './actionTypes';
 import axios from "axios";
@@ -23,3 +24,4 @@ function* homePageSaga() {
 }
 
 export default homePageSaga;
+*/

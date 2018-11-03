@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { fromJS } from 'immutable';
+// import { fromJS } from 'immutable';
 
 export const getHomeDataAction = () => ({
     type: actionTypes.GET_HOME_DATA

@@ -1,3 +1,4 @@
+/*
 import { takeEvery, put } from 'redux-saga/effects';
 import actionTypes from './actionTypes';
 import axios from 'axios';
@@ -24,3 +25,4 @@ const projectListSagas = function* () {
 }
 
 export default projectListSagas;
+*/
