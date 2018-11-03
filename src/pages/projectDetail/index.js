@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
     DetailConainter,
     DetailContent,
+    DetailFooter,
 } from './style';
 import Header from '../../components/header/index';
 import { getDetailDataAction } from './store/actionCreators';
@@ -50,6 +51,11 @@ class ProjectDetail extends PureComponent {
                         }
                     </div>
                 </DetailContent>
+                <DetailFooter>
+                    <span className="footerPrice">{details.price}</span>
+                    <span className="footerButton consult">咨询</span>
+                    <span className="footerButton apply">报名</span>
+                </DetailFooter>
             </DetailConainter>
         )
     }

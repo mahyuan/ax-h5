@@ -1,11 +1,11 @@
 import Styled from 'styled-components';
 
 export const DetailConainter = Styled.div`
-    display: block;
     position: relative;
+    display: block;
+    padding-top: 0.85rem;
     color: #333;
     font-size: 0.24rem;
-    padding-top: 0.85rem;
     overflow: hidden;
     .content {
         display: inline-block;
@@ -74,5 +74,45 @@ export const DetailContent = Styled.div`
             width: calc(100% - 0.4rem);
             margin: 0 auto;
         }
+    }
+`
+export const DetailFooter = Styled.div`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 0.8rem;
+    padding: 0.15rem 0.2rem;
+    background-color: #fff;
+    border-top: 0.01rem solid #ddd;
+    font-size: 0.26rem;
+    z-index: 199;
+    .footerPrice {
+        display: inline-block;
+        width: 2rem;
+        text-align: left;
+        height: 100%;
+        line-height: .8rem;
+        font-size: 0.28rem;
+        color: #222;
+    }
+    .footerButton {
+        display: inline-block;
+        height: 0.5rem;
+        width: 1.4rem;
+        margin: 0.15rem 0.4rem;
+        line-height: 0.5rem;
+        background-color: #fff;
+        border: 0.01rem solid #444;
+        border-radius: 0.03rem;
+        color: #444;
+        text-align: center;
+    }
+    .apply {
+
+    }
+    .consult {
+
     }
 `
