@@ -12,6 +12,7 @@ class Banner extends PureComponent {
             currentKey: 0,
             count: 0,
         }
+        this.toSlide = true;
     }
     render() {
         let { banner } = this.props;
@@ -37,20 +38,26 @@ class Banner extends PureComponent {
     componentDidMount() {
         this.setSlider();
     }
+    componentWillUnmount() {
+        this.toSlide = false;
+    }
     setSlider() {
-        
-        let timer = setInterval(() => {            
-            let key = this.state.currentKey;
-            let count = this.state.count;
-            
-            
-            if(count < 1) return;
-            if(key < count) key++;
-            if(key === count) key = 0;
-
-            this.setState((state) => ({
-                currentKey: key
-            }));
+        let timer = setInterval(() => {
+            if(this.toSlide) {
+                let key = this.state.currentKey;
+                let count = this.state.count;
+                
+                if(count < 1) return;
+                if(key < count) key++;
+                if(key === count) key = 0;
+                
+                this.setState((state) => ({
+                    currentKey: key
+                }));
+            } else {
+                clearInterval(timer);
+                this.toSlide = false;
+            }
         }, 3000);
 
     }

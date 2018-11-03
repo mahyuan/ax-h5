@@ -27,34 +27,35 @@ function* getHomeData() {
     }
 }
 
-function* fetchList() {
+function* fetchList(action) {
     try {
         let resp = yield axios.get('/api/get_projet_list');
-        let action = initProjectListAction(resp.list);
-        yield put(action);
+        yield put(initProjectListAction(resp.list));
 
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get list by require JSON file.......');
         let data = require('../assets/api/project_list.json'); 
         data = data.list;
-        let action = initProjectListAction(data);
-        yield put(action);
+        yield put(initProjectListAction(data));
     }
 }
 
-function* fetchDetail() {
+function* fetchDetail(action) {
     try {
-        let pro_id = this.query.id;
-        let resp = yield axios.get(`/api/get_detail/${pro_id}`);
+        let pid = action.pid;
+        let resp = yield axios.get(`/api/get_detail/${pid}`);
         resp = resp.data;
+        yield put(initDetailAction(resp));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
-        let data = require('../assets/api/project_list.json'); 
+        
+        let data = require('../assets/api/project_list.json');
+        let pid = action.pid;        
         data = data.list;
-        let action = initDetailAction(data);
-        yield put(action);
+        let info = pid && data.find(item => item.id == pid);        
+        yield put(initDetailAction(info));
     }
 }
 

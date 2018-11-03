@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
     ProjectWrap
 } from './style';
 
 class Project extends PureComponent {
     constructor(props) {
-        super(props);        
+        super(props);
     }
 
     render() {
@@ -19,9 +20,7 @@ class Project extends PureComponent {
                 <div className="textContent">
                     <h3 className="overview">项目介绍</h3>
                     <p className="detail">{target.desc}</p>
-                    <button className="toDetail" onClick={() => {
-                        console.log(`jump to project detail by id: ${target.id}`)
-                    }}>查看</button>
+                    <Link to={`/detail/${target.id}`} className="toDetail">查看</Link>
                 </div>
             </ProjectWrap>
         )

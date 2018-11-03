@@ -4,7 +4,7 @@ import { getHomeDataAction } from './store/actionCreators';
 import Banner from '../../components/banner/index';
 import Profile from '../../components/profile/index';
 import Project from '../../components/project/index';
-
+import { Link } from 'react-router-dom';
 import { 
     HomeWrap,
     ProjectInfoTitle,
@@ -29,10 +29,7 @@ class Home extends PureComponent {
                                             <div className={`projectTag ${item.type==="recommend" ? "hot" : ""}`}>{item.tag} |<span>【{item.name}】</span></div>
                                             {
                                                 item.type === "quality" ?
-                                            <span onClick={() => {
-                                                console.log('show more event!')
-                                            }} className="showMore">{`更多`}</span> : 
-                                                ''
+                                                <Link to="/list" className="showMore">更多</Link> : ''
                                             }
                                         </ProjectInfoTitle>
                                         <Project key={item.id} target={item}>{item.desc}</Project>
@@ -42,7 +39,6 @@ class Home extends PureComponent {
                         }
                     </div>
                 </div>
-                
             </HomeWrap>
         )
     }

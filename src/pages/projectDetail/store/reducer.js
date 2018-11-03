@@ -2,15 +2,13 @@ import { fromJS } from 'immutable';
 import actionTypes from './actionTypes';
 
 const defaultState = fromJS({
-    detail: {}
+    info: {}
 })
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        // case actionTypes.GET_DETAIL:
-        //     return state.set("detail", action.data)
         case actionTypes.INIT_DETAIL:
-            return state.set('detail', action.detail);
+            return state.set('info', action.info);
         default:
             return state;
     }

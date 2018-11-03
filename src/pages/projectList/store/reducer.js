@@ -6,9 +6,7 @@ const defaultState = fromJS({
 
 export default (state = defaultState, action ) => {
     switch (action.type) {
-        case actionType.INIT_PRO_LIST:
-        console.log('reducer', action);
-        
+        case actionType.INIT_PRO_LIST:        
             return state.set("list", action.list)    
         default:
             return state;

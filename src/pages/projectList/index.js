@@ -24,7 +24,7 @@ class ProjectList extends PureComponent {
             </ProjectWrap>
         )
     }
-    componentDidMount() {
+    componentDidMount() {        
         this.props.initListPage();
     }
 }

@@ -1,11 +1,12 @@
 import actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
 
-export const getDetailDataAction = () => ({
-    type: actionTypes.GET_DETAIL
+export const getDetailDataAction = (pid) => ({
+    type: actionTypes.GET_DETAIL,
+    pid
 })
 
-export const initDetailAction = (detail) => ({
+export const initDetailAction = (info) => ({
     type: actionTypes.INIT_DETAIL,
-    detail: fromJS(detail)
+    info: fromJS(info)
 })
