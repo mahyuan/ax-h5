@@ -14,13 +14,13 @@ class Home extends PureComponent {
         return (
             <HomeWrap>
                 <Banner></Banner>
-                <Profile></Profile>
+                {/* <Profile></Profile>
                 <div className="projectWrap">
                     <p>热门推荐</p>
                     <Project></Project>
                     <p>优质项目</p>
                     <Project></Project>
-                </div>
+                </div> */}
             </HomeWrap>
         )
     }

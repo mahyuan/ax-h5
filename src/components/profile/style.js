@@ -1,6 +1,7 @@
 import Styled from 'styled-components';
 
 export const ProfileWrap = Styled.div`
+    position: relative;
     display: inline-block;
     width: 100%;
     text-align: center;
