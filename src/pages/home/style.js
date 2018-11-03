@@ -9,7 +9,7 @@ export const HomeWrap = Styled.div`
         display: block;
         width: 100%;
         // height: 2rem;
-        background-color: #eee;
+        background-color: #fff;
     }
 
 `

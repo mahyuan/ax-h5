@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Project from '../../components/project';
+import Header from '../../components/header';
 import {
     ProjectWrap,
 } from './style';
@@ -13,14 +14,20 @@ class ProjectList extends PureComponent {
 
         return (
             <ProjectWrap>
-            {
-                proList.map((pro, index) => {
-                    return (
-                        <Project key={pro.id} target={pro} />
-                        
-                    )
-                })
-            }
+                <Header>
+                    {
+                        <div className="header_project">优质项目</div>
+                    }
+                </Header>
+                <Fragment>
+                    {
+                        proList.map((pro, index) => {
+                            return (
+                                <Project key={pro.id} target={pro} />
+                            )
+                        })
+                    }
+                </Fragment>
             </ProjectWrap>
         )
     }

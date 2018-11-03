@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import {
     DetailConainter,
     DetailContent,
-    CommonHeader,
 } from './style';
+import Header from '../../components/header/index';
 import { getDetailDataAction } from './store/actionCreators';
 
 class ProjectDetail extends PureComponent {
@@ -30,18 +30,21 @@ class ProjectDetail extends PureComponent {
 
         return (
             <DetailConainter>
-                <CommonHeader>
-                    <div className="header">查看</div>
-                </CommonHeader>
+                <Header>
+                    {
+                        <div className="header_look">查看</div>
+                    }
+                </Header>
                 <DetailContent>
-                    <h3>{details.name}</h3>
-                    <p>{details.price}</p>
-                    <div className="content">
-                        <span>{details.country}</span> 
-                        <span>{details.people}</span>
-                        <span>{details.time}</span>
+                    <h3 className="projectName">{details.name}</h3>
+                    <p className="projectPrice">{details.price}</p>
+                    <div className="projectDetail">
+                        <span className="country">国家：{details.country}</span> 
+                        <span className="people">适合人群：{details.people}</span>
+                        <span className="time">时间：{details.time}</span>
                     </div>
                     <div className="more_info">
+                        <h3 className="projectInfoTitle">项目介绍</h3>
                         {
                         this.renderImgs(details.more_info) 
                         }

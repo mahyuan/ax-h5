@@ -13,7 +13,7 @@ export const ProjectWrap = Styled.div`
         height: 2rem;
         margin-right: 0.3rem;
         // margin-left: 0.2rem;
-        border: 0.01rem dashed red;
+        // border: 0.01rem dashed red;
         img{
             height: 100%;
             display: block;
@@ -27,7 +27,7 @@ export const ProjectWrap = Styled.div`
         align-items: flex-start;
         padding: 0.3rem 0.02rem;
         color: #333;
-        border: 0.01rem dashed blue;
+        // border: 0.01rem dashed blue;
         .overview {
             display: inline-block;
             width: 100%;
