@@ -27,13 +27,13 @@ export const BannerWrap = Styled.div`
         }
         &.next { 
             transform: translate(7.5rem, 0) translateZ(0);
-            transition-duration: 0ms; 
+            transition-duration: 0ms;
             z-index: 99; 
         }
         &.hide {
             transform: translate(-7.5rem, 0) translateZ(0);
             transition-duration: 0ms; 
-            z-index: 99; 
+            z-index: 99;
         }
         .bannerImg{
             display: block;
