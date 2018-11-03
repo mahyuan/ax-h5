@@ -20,6 +20,28 @@ export const DetailConainter = Styled.div`
         font-size: 0.3rem;
         text-align: center;
     }
+    
+    .footerPrice {
+        display: inline-block;
+        width: 2rem;
+        text-align: left;
+        height: 100%;
+        line-height: .8rem;
+        font-size: 0.28rem;
+        color: #222;
+    }
+    .footerButton {
+        display: inline-block;
+        height: 0.5rem;
+        width: 1.4rem;
+        margin: 0.15rem 0.4rem;
+        line-height: 0.5rem;
+        background-color: #fff;
+        border: 0.01rem solid #444;
+        border-radius: 0.03rem;
+        color: #444;
+        text-align: center;
+    }
 `
 export const DetailContent = Styled.div`
     position: relative;

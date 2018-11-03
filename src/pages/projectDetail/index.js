@@ -1,12 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import {
     DetailConainter,
     DetailContent,
-    DetailFooter,
 } from './style';
 import Header from '../../components/header/index';
+import Footer from '../../components/footer/index';
 import { getDetailDataAction } from './store/actionCreators';
+import { Link } from 'react-router-dom';
 
 class ProjectDetail extends PureComponent {
     constructor(props) {
@@ -33,7 +34,7 @@ class ProjectDetail extends PureComponent {
             <DetailConainter>
                 <Header>
                     {
-                        <div className="header_look">查看</div>
+                        <span className="header_look">查看</span>
                     }
                 </Header>
                 <DetailContent>
@@ -51,11 +52,15 @@ class ProjectDetail extends PureComponent {
                         }
                     </div>
                 </DetailContent>
-                <DetailFooter>
-                    <span className="footerPrice">{details.price}</span>
-                    <span className="footerButton consult">咨询</span>
-                    <span className="footerButton apply">报名</span>
-                </DetailFooter>
+                <Footer>
+                 {
+                     <Fragment>
+                        <span className="footerPrice">{details.price}</span>
+                        <Link to="/consult" className="footerButton consult">咨询</Link>
+                        <Link to="/apply" className="footerButton apply">报名</Link>
+                     </Fragment>
+                 }
+                </Footer>
             </DetailConainter>
         )
     }
