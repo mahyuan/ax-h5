@@ -46,6 +46,7 @@ export const DetailConainter = Styled.div`
 export const DetailContent = Styled.div`
     position: relative;
     display: block;
+    margin: 0.02rem 0 1.5rem;
     .projectName {
         display: inline-block;
         width: 100%;
