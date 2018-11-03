@@ -6,47 +6,50 @@ import Profile from '../../components/profile/index';
 import Project from '../../components/project/index';
 
 import { 
-    HomeWrap
+    HomeWrap,
+    ProjectInfoTitle,
 } from './style';
 
 class Home extends PureComponent {
     render() {
-        // debugger
         const { project_List } = this.props;
         let proList = project_List.toJS();
-        let s = this.hotRecommendList(proList)
-        console.log('s', s);
-        
+        proList.length = 2;
         return (
             <HomeWrap>
                 <Banner />
                 <Profile />
                 <div className="projectWrap">
                     <div className="hotRecommended">
-                        {/* {
-                            this.hotRecommendList(proList)
-                        } */}
+                        {
+                            proList.map((item, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <ProjectInfoTitle>
+                                            <div className={`projectTag ${item.type==="recommend" ? "hot" : ""}`}>{item.tag} |<span>【{item.name}】</span></div>
+                                            {
+                                                item.type === "quality" ?
+                                            <span onClick={() => {
+                                                console.log('show more event!')
+                                            }} className="showMore">{`更多`}</span> : 
+                                                ''
+                                            }
+                                        </ProjectInfoTitle>
+                                        <Project key={item.id} target={item}>{item.desc}</Project>
+                                    </Fragment>
+                                )
+                            })
+                        }
                     </div>
                 </div>
+                
             </HomeWrap>
         )
     }
     componentDidMount() {
         this.props.getInit();
     }
-    hotRecommendList(list) {
-        let hotTarget = list.filter(item => item.tag == 'hot');
-        // console.log('hotTarget--------', hotTarget);
-        
-        if (hotTarget instanceof Array && hotTarget.length ) {
-            return hotTarget.map((target, index) => {
-                return (
-                    <Project key={index} /> 
-                    )
-            })   
-        }
-        
-    }
+    
 }
 
 const mapState = (state) => ({

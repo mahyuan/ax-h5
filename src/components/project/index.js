@@ -6,25 +6,23 @@ import {
 
 class Project extends PureComponent {
     constructor(props) {
-        super(props);
-        console.log('projcet component props', props);
-        
+        super(props);        
     }
-    
+
     render() {
-        const { projectTarget } = this.props;
-        console.log('projectTarget', projectTarget);
-        
+        let { target }  = this.props;        
         return (
             <ProjectWrap>
-            {
-                {/* project.map((pro, index) => {
-                    return (
-                        <div></div>
-                    )
-                }) */}
-
-            }
+                <div className="imgContent">
+                    <img src={target.img} alt={target.name} />
+                </div>
+                <div className="textContent">
+                    <h3 className="overview">项目介绍</h3>
+                    <p className="detail">{target.desc}</p>
+                    <button className="toDetail" onClick={() => {
+                        console.log(`jump to project detail by id: ${target.id}`)
+                    }}>查看</button>
+                </div>
             </ProjectWrap>
         )
     }
