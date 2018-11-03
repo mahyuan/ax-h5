@@ -7,7 +7,7 @@ export const ProfileWrap = Styled.div`
     text-align: center;
     padding: 0.2rem 0.3rem;
     box-sizing: border-box;
-    border: 0.01rem dotted red;
+    // border: 0.01rem dotted red;
 `
 export const ProfileItem = Styled.div`
     display: inline-block;
