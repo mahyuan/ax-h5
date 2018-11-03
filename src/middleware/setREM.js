@@ -8,7 +8,8 @@ export default (function (){
         let width = document.documentElement.clientWidth;
         let originFontSize = parseFloat(htmlElement.style.fontSize) || 16;
         htmlElement.setAttribute('data-origin-font-size', originFontSize);
-        htmlElement.style.fontSize = goPAGE ? (625 * width / 750 * 16 / fontSize + '%') : ( 417 + '%');
+        
+        htmlElement.style.fontSize = goPAGE() ? (625 * width / 750 * 16 / fontSize + '%') : ( 417 + '%');
     }
     autoSize();
     window.addEventListener('resize', autoSize, false);
