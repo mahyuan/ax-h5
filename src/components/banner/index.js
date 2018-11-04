@@ -75,7 +75,7 @@ class Banner extends PureComponent {
     }
 }
 const mapState = (state) => ({
-    banner: state.getIn(['home', 'banner'])
+    banner: state.get('banner')
 })
 
 const mapDispatch = (dispatch) => ({

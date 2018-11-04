@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { getHomeDataAction } from './store/actionCreators';
+import { getHomeDataAction } from '../../store/actionCreators';
 import Banner from '../../components/banner';
 import Profile from '../../components/profile';
 import Project from '../../components/project';
@@ -14,8 +14,9 @@ import {
 
 class Home extends PureComponent {
     render() {        
-        const { project_List } = this.props;
-        let proList = project_List.toJS();
+        const { home_pro_List } = this.props;
+        let proList = home_pro_List.toJS();
+        // let proList = [];
         // proList.length = 2;
         return (
             <HomeWrap>
@@ -52,7 +53,7 @@ class Home extends PureComponent {
 }
 
 const mapState = (state) => ({
-    project_List: state.getIn(['home', 'project_List'])
+    home_pro_List: state.get('home_pro_List')
 })
 
 const mapDispatch = (dispatch) => {
@@ -60,7 +61,6 @@ const mapDispatch = (dispatch) => {
         getInit() {
             let action = getHomeDataAction();
             dispatch(action);
-
         }
     }
 }

@@ -28,7 +28,7 @@ class Project extends PureComponent {
 }
 
 const mapState = (state) => ({
-    // project_List: state.getIn(['home', 'project_List'])
+    // project_List: state.get(project_List')
 })
 
 const mapDispatch = (dispath) => ({

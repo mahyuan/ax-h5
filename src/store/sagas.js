@@ -1,16 +1,11 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
-import  homeActionTypes from '../pages/home/store/actionTypes';
-import  projectListActionTypes  from '../pages/projectList/store/actionTypes';
-import  detailActionTypes  from '../pages/projectDetail/store/actionTypes';
-
-import { initHomePageAction } from '../pages/home/store/actionCreators';
-import { initProjectListAction } from '../pages/projectList/store/actionCreators';
-import { initDetailAction } from '../pages/projectDetail/store/actionCreators';
-
-const constants = Object.assign({}, homeActionTypes, projectListActionTypes, detailActionTypes);
-
-
+import constants from './actionTypes';
+import {
+    initHomePageAction,
+    initProjectListAction,
+    initDetailAction
+} from './actionCreators';
 
 function* getHomeData() {
     try {
@@ -54,7 +49,7 @@ function* fetchDetail(action) {
         let data = require('../assets/api/project_list.json');
         let pid = action.pid;        
         data = data.list;
-        let info = pid && data.find(item => item.id == pid);        
+        let info = pid && data.find(item => item.id == pid);                
         yield put(initDetailAction(info));
     }
 }

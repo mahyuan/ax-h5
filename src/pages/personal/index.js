@@ -5,14 +5,14 @@ import {
     PersionalWrap,
 } from './style';
 
-
 class Personal extends PureComponent {
     render() {
         return (
             <PersionalWrap>
-                <div>activity
-                    <Footer current={this.props.match.path}></Footer>
+                <div>
+                    Personal
                 </div>
+                <Footer current={this.props.match.path}></Footer>
             </PersionalWrap>
         )
     }

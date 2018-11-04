@@ -50,7 +50,7 @@ class Profile extends PureComponent {
 }
 
 const mapState = (state) => ({
-    company_profile:  state.getIn(['home', 'company_profile'])
+    company_profile:  state.get('company_profile')
 
 })
 

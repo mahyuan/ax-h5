@@ -6,7 +6,7 @@ import {
     DetailFooter,
 } from './style';
 import Header from '../../components/header/index';
-import { getDetailDataAction } from './store/actionCreators';
+import { getDetailDataAction } from '../../store/actionCreators';
 import { Link } from 'react-router-dom';
 
 class ProjectDetail extends PureComponent {
@@ -72,7 +72,7 @@ class ProjectDetail extends PureComponent {
 }
 
 const mapState = (state) => ({
-    info: state.getIn(['detail', 'info']),
+    info: state.get('details'),
 })
 
 const mapDispatch = (dispatch) => ({

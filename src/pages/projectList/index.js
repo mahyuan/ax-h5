@@ -37,7 +37,7 @@ class ProjectList extends PureComponent {
 }
 
 const mapState = (state) => ({
-    list: state.getIn(['projects', 'list']),
+    list: state.get('list'),
 })
 
 const mapDispatch = (dispatch) => ({
