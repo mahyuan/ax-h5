@@ -1,9 +1,11 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getHomeDataAction } from './store/actionCreators';
-import Banner from '../../components/banner/index';
-import Profile from '../../components/profile/index';
-import Project from '../../components/project/index';
+import Banner from '../../components/banner';
+import Profile from '../../components/profile';
+import Project from '../../components/project';
+import Footer from '../../components/footer';
+
 import { Link } from 'react-router-dom';
 import { 
     HomeWrap,
@@ -39,6 +41,15 @@ class Home extends PureComponent {
                         }
                     </div>
                 </div>
+                <Footer>
+                    {
+                        <div>
+                            <span>发现</span>
+                            <span>活动</span>
+                            <span>我的</span>
+                        </div>
+                    }
+                </Footer>
             </HomeWrap>
         )
     }
