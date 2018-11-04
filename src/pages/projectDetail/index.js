@@ -34,7 +34,7 @@ class ProjectDetail extends PureComponent {
             <DetailConainter>
                 <Header>
                     {
-                        <span className="header_look">查看</span>
+                        <span show_back='show'>查看</span>
                     }
                 </Header>
                 <DetailContent>

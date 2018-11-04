@@ -6,10 +6,6 @@ export const ConsultWrap = Styled.div`
     height: 100vh;
     border: 0.01rem solid #eee;
     box-sizing: border-box;
-    .headerText {
-        // color: blue;
-    }
-
 `
 export const MessageWrap = Styled.div`
     display: block;

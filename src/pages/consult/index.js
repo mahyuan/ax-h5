@@ -18,7 +18,7 @@ class Consult extends PureComponent {
             <ConsultWrap>
                 <Header>
                     {
-                        <span className="headerText">咨询</span>
+                        <span show_back='show'>咨询</span>
                     }
                 </Header>
                 <MessageWrap>

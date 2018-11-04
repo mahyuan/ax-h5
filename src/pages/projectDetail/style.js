@@ -12,15 +12,6 @@ export const DetailConainter = Styled.div`
         width: 100%;
         height: 2rem;
     }
-    .header_look {
-        display: inline-block;
-        width: 100%;
-        height: 0.8rem;
-        line-height: 0.8rem;
-        font-size: 0.3rem;
-        text-align: center;
-    }
-    
     .footerPrice {
         display: inline-block;
         width: 2rem;

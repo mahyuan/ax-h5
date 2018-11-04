@@ -16,7 +16,7 @@ class ProjectList extends PureComponent {
             <ProjectWrap>
                 <Header>
                     {
-                        <span className="header_project">优质项目</span>
+                        <span show_back='show'>优质项目</span>
                     }
                 </Header>
                 <Fragment>

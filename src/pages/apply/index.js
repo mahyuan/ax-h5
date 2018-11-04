@@ -12,7 +12,7 @@ class Apply extends PureComponent {
             <ApplyWrap>
                 <Header>
                     {
-                        <span className="header_apply">报名</span>
+                        <span show_back='show'>报名</span>
                     }
                 </Header>
                 <ApplyContainer>

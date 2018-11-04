@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -12,12 +12,22 @@ class Header extends PureComponent {
         this.history = createBrowserHistory();  
     }
     render() {
+        let goBack = () => {
+            let show = this.props.children.props.show_back || null;            
+            if(show == 'show') {
+                return ( <span className="back" onClick={() => this.history.goBack()}>返回</span>)
+            } else {
+                return null
+            }
+        }
         return (
             <CommonHeader>
-                <span className="back" onClick={() => this.history.goBack()}>返回</span>
+                { goBack() }
+                <Fragment>
                 {
-                    this.props.children
+                        this.props.children
                 }
+                </Fragment>
             </CommonHeader>
         )
     }
