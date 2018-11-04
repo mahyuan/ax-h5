@@ -2,11 +2,13 @@ import actionTypes from './actionTypes';
 import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
-    banner: [],
-    company_profile: [],
-    home_pro_List: [],
-    list: [],
-    details: {},
+    banner: [], // 首页banner
+    company_profile: [], // 首页公司介绍
+    home_pro_List: [], // 首页项目列表
+    list: [], // 项目列表页数据
+    details: {}, // 项目详情页数据
+    activ_list: [], // 活动详情页数据
+    personal_info: {}, // 个人详情页数据
 })
 
 export default ( state = defaultState, action ) => {
@@ -23,8 +25,14 @@ export default ( state = defaultState, action ) => {
             return state.set("list", action.list);
 
         case actionTypes.INIT_PRO_DETAIL:            
-            return state.set('details', action.details); 
+            return state.set('details', action.details);
 
+        case actionTypes.INIT_ACTIV_PAGE:
+            return state.set('activ_list', action.activ_list);
+        
+        case actionTypes.INIT_PERSONAL_PAGE:
+            return state.set('personal_info', action.personal_info);
+            
         default:
             return state;
     }

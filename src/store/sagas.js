@@ -4,7 +4,9 @@ import constants from './actionTypes';
 import {
     initHomePageAction,
     initProjectListAction,
-    initDetailAction
+    initDetailAction,
+    initActivityPage,
+    initPersonalPage,
 } from './actionCreators';
 
 function* getHomeData() {
@@ -54,10 +56,42 @@ function* fetchDetail(action) {
     }
 }
 
+function* fetchActivityInfo() {
+    try {
+        let resp = yield axios.get('/api/activity/list');
+        resp = resp.data;
+        yield put(initActivityPage(resp));
+    } catch (e) {
+        console.log('get project lsit data failed', e);
+        console.log('get detail by require JSON file.......');
+        
+        let data = require('../assets/api/activity_info.json');
+        data = data.data;
+        yield put(initActivityPage(data));
+    }
+}
+
+function* fetchPersonData() {
+    try {
+        let resp = yield axios.get('/api/personal');
+        resp = resp.data;
+        yield put(initPersonalPage(resp));
+    } catch (e) {
+        console.log('get project lsit data failed', e);
+        console.log('get detail by require JSON file.......');
+        
+        let data = require('../assets/api/persional.json');
+        data = data.data;
+        yield put(initPersonalPage(data));
+    }
+}
+
 function* sagas() {
     yield takeEvery(constants.GET_HOME_DATA, getHomeData);
     yield takeEvery(constants.GET_PRO_LIST, fetchList);
     yield takeEvery(constants.GET_DETAIL, fetchDetail);
+    yield takeEvery(constants.GET_ACTIV_DATA, fetchActivityInfo);
+    yield takeEvery(constants.GET_PERSONAL_INFO, fetchPersonData);
 }
 
 export default sagas;
