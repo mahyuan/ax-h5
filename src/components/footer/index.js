@@ -14,7 +14,7 @@ class Footer extends PureComponent {
             <DetailFooter>
                 <div className="footerContent">
                     <Link to="/" className={this.setClass(current, '/')}>发现</Link>
-                    <Link to="/activity" className={this.setClass(current, '/activity')}>活动</Link>
+                    <Link to="/activity_list" className={this.setClass(current, '/activity_list')}>活动</Link>
                     <Link to="/personal" className={this.setClass(current, '/personal')}>我的</Link>
                 </div>
             </DetailFooter>
