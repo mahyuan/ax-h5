@@ -7,16 +7,12 @@ import {
 import Header from '../../components/header/index';
 import Footer from '../../components/footer/index';
 import { getDetailDataAction } from './store/actionCreators';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 class ProjectDetail extends PureComponent {
     constructor(props) {
         super(props);
         this.pid = props.match.params.pid || '';
-        // console.log('pid', this.pid);
-        
-        // this.pid = 1;
         this.renderImgs = this.renderImgs.bind(this);
     }
     renderImgs(imgs) {
@@ -31,11 +27,11 @@ class ProjectDetail extends PureComponent {
         }
     }
     render() {
-        let { info } = this.props;
+        let { info, match } = this.props;
         let details = info && info.toJS();
 
         return (
-            <DetailConainter>            
+            <DetailConainter>
                 <Header>
                     {
                         <span className="header_look">查看</span>

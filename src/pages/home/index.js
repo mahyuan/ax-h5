@@ -16,7 +16,7 @@ class Home extends PureComponent {
     render() {
         const { project_List } = this.props;
         let proList = project_List.toJS();
-        proList.length = 2;
+        // proList.length = 2;
         return (
             <HomeWrap>
                 <Banner />

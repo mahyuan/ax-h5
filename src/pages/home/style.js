@@ -2,7 +2,10 @@ import Styled from 'styled-components';
 
 export const HomeWrap = Styled.div`
     .projectWrap {
-        display: block; 
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-bottom: 1.5rem;
         background-color: #fff;
     }
     .hotRecommended {

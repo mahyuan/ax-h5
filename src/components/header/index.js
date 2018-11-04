@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 import {
     CommonHeader,
 } from './style';
+import { createBrowserHistory } from 'history';
 
 class Header extends PureComponent {
     constructor(props) {
         super(props);
-        console.log('props', props.history);
-        
+        this.history = createBrowserHistory();  
     }
     render() {
-        let { back } = this.props;
         return (
             <CommonHeader>
-                <span className="back" onClick={back}>返回</span>
+                <span className="back" onClick={() => this.history.goBack()}>返回</span>
                 {
                     this.props.children
                 }
@@ -28,9 +27,7 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-    back() {
-        // return location.history.back() || null;
-    }
+
 })
 
 export default connect(mapState, mapDispatch)(Header);
