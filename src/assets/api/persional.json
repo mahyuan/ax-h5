@@ -1,0 +1,43 @@
+{
+    "code": 0,
+    "data": {
+        "integral": 123121,
+        "integral_explain": {
+            "integral_rule": "积分规则：1.每1积分可兑换人民币1元；2.每邀请好友报名成功，就可获得积分奖励",
+            "level_rule": [
+                {
+                    "levt": "V1",
+                    "person_number": 0,
+                    "integral_total": 100
+                },
+                    {
+                    "levt": "V2",
+                    "person_number": 5,
+                    "integral_total": 200
+                },
+                    {
+                    "levt": "V3",
+                    "person_number": 10,
+                    "integral_total": 500
+                },
+                {
+                    "levt": "V4",
+                    "person_number": 30,
+                    "integral_total": 1000
+                },
+                {
+                    "levt": "V5",
+                    "person_number": 50,
+                    "integral_total": 2000
+                }
+            ]
+        },
+        "person_info": {
+            "user_name": "mhyfsdfse sd",
+            "mobile": "1213344555",
+            "email": "1518888888@163.com",
+            "school": "北京xxx大学"
+        }
+
+    }
+}
