@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import {
     DetailConainter,
     DetailContent,
+    DetailFooter,
 } from './style';
 import Header from '../../components/header/index';
-import Footer from '../../components/footer/index';
 import { getDetailDataAction } from './store/actionCreators';
 import { Link } from 'react-router-dom';
 
@@ -52,21 +52,17 @@ class ProjectDetail extends PureComponent {
                         }
                     </div>
                 </DetailContent>
-                <Footer>
-                 {
-                     <Fragment>
-                        <span className="footerPrice">{details.price}</span>
-                        <Link to={{
-                            pathname: `/detail/${this.pid}/consult`,
-                            // search: `?id=${this.pid}`
-                        }} className="footerButton consult">咨询</Link>
-                        <Link to={{
-                            pathname: `/detail/${this.pid}/apply`,
-                            // search: `?id=${this.pid}`
-                        }} className="footerButton apply">报名</Link>
-                     </Fragment>
-                 }
-                </Footer>
+                <DetailFooter>
+                    <span className="footerPrice">{details.price}</span>
+                    <Link to={{
+                        pathname: `/detail/${this.pid}/consult`,
+                        // search: `?id=${this.pid}`
+                    }} className="footerButton consult">咨询</Link>
+                    <Link to={{
+                        pathname: `/detail/${this.pid}/apply`,
+                        // search: `?id=${this.pid}`
+                    }} className="footerButton apply">报名</Link>                 
+                </DetailFooter>
             </DetailConainter>
         )
     }

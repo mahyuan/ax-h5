@@ -13,7 +13,7 @@ import {
 } from './style';
 
 class Home extends PureComponent {
-    render() {
+    render() {        
         const { project_List } = this.props;
         let proList = project_List.toJS();
         // proList.length = 2;
@@ -41,15 +41,7 @@ class Home extends PureComponent {
                         }
                     </div>
                 </div>
-                <Footer>
-                    {
-                        <div>
-                            <span>发现</span>
-                            <span>活动</span>
-                            <span>我的</span>
-                        </div>
-                    }
-                </Footer>
+                <Footer current={this.props.match.path}></Footer>
             </HomeWrap>
         )
     }
