@@ -2,6 +2,7 @@
     "code": 0,
     "data": {
         "integral": 123121,
+        "integ_level": "V2",
         "integral_explain": {
             "integral_rule": "积分规则：1.每1积分可兑换人民币1元；2.每邀请好友报名成功，就可获得积分奖励",
             "level_rule": [

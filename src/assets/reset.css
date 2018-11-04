@@ -44,10 +44,6 @@ table {
 a {
     text-decoration: none;
 }
-body {
-    font-size: 0.26rem;
-    color: #222;
-}
 html {
     webkit-overflow-scrolling: touch;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -55,6 +51,8 @@ html {
     background-color: #f5f5f5;
 }
 body {
+    font-size: 0.26rem;
+    color: #222;
     background-color: #fff;
 }
 @media screen and (min-width: 900px){
