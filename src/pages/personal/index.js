@@ -26,7 +26,7 @@ class Personal extends PureComponent {
                 </TopContent>
                 <MainContent>
                     <div className="item">
-                        <span>积分说明</span>
+                        <Link to='/points/explain'>积分说明</Link>
                     </div>
                     <div className="item">
                         <span>我的报名</span>
