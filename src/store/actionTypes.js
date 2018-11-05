@@ -5,8 +5,10 @@ export default {
     INIT_PRO_LIST: 'list/init_project_list',
     GET_DETAIL: 'detail/get_detail_data',
     INIT_PRO_DETAIL: 'detail/init_project_detail',
-    GET_ACTIV_DATA: 'activity/get_activity_data',
-    INIT_ACTIV_PAGE: 'activity/init_activity_page',
+    GET_ACTIVS_DATA: 'activity/get_activity_list_data',
+    INIT_ACTIVS_PAGE: 'activity/init_activity_list_page',
+    GET_ACTIVITY_DETAIL: 'activity/get_activity_details',
+    INIT_ACTIVITY_DETAIL: 'activity/init_activity_details',
     GET_PERSONAL_INFO: 'personal/get_personal_info',
     INIT_PERSONAL_PAGE: 'personal/init_personal_page',
 }

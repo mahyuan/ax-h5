@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import ActivityItem from '../../components/activityItem';
 import Footer from '../../components/footer';
-import { getActivityData } from '../../store/actionCreators';
+import { getActivityListDataAction } from '../../store/actionCreators';
 import Header from '../../components/header';
 import {
     ActivityWrap,
@@ -14,7 +14,6 @@ class Activity extends PureComponent {
     render() {
         let { activ_list } = this.props;
         const list = activ_list.toJS();
-        console.log('activ_list', list);
         
         return (
             <ActivityWrap>
@@ -45,7 +44,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
     fetList() {
-        let action = getActivityData();
+        let action = getActivityListDataAction();
         dispatch(action);
     }
 })

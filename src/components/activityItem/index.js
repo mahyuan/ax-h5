@@ -9,10 +9,12 @@ class ActivityItem extends PureComponent {
     render() {
         let { item } = this.props;
         let aid = item.id;
+        console.log('aid-=-=', aid);
+        
         return (
             <ActivityItemWrap>
                 <div className="item_content">
-                    <Link to={`/actitity/${aid}`}>
+                    <Link to={`/activity/${aid}`}>
                         <div className="activity_banner">
                             <img className="banner_image" src={item.banner} alt="activity banner" />
                         </div>

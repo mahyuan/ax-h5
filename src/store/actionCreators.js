@@ -29,13 +29,27 @@ export const initDetailAction = (details) => ({
     details: fromJS(details)
 })
 
-export const getActivityData = () => ({
-    type: actionTypes.GET_ACTIV_DATA
+// 获取活动列表
+export const getActivityListDataAction = () => ({
+    type: actionTypes.GET_ACTIVS_DATA
 })
 
-export const initActivityPage = (data) => ({
-    type: actionTypes.INIT_ACTIV_PAGE,
+// 初始化活动列表
+export const initActivityListPageAction = (data) => ({
+    type: actionTypes.INIT_ACTIVS_PAGE,
     activ_list: fromJS(data)
+})
+
+// 获取活动页详情
+export const getActivityDetailAction = (aid) => ({
+    type: actionTypes.GET_ACTIVITY_DETAIL,
+    aid
+})
+
+// 初始化活动详情页数据
+export const initActivityDetailAction = (data) => ({
+    type: actionTypes.INIT_ACTIVITY_DETAIL,
+    activity_details: fromJS(data)
 })
 
 export const getPersonalData = () => ({
