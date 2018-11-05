@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/footer';
 import { getPersonalData } from '../../store/actionCreators';
 import {
@@ -21,7 +22,7 @@ console.log('info', info);
                         <h3 className="total_integral">总积分</h3>
                         <span className="integral">{info.points}</span>
                         <span className="integral_level">等级: {info.level}</span>
-                        <button onClick={this.exchange} className="exchange_button">积分兑换</button>
+                        <Link to="/points/exchange" className="exchange_button">积分兑换</Link>
                     </div>
                 </TopContent>
                 <MainContent>

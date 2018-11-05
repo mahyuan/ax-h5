@@ -23,7 +23,7 @@ class App extends PureComponent {
                         <Route path="/project/:pid" exact component={ProjectDetail}></Route>
                         <Route path="/project/:pid/consult" exact component={Consult}></Route>
                         <Route path="/project/:pid/apply" exact component={Apply}></Route>
-                        <Route path="/activitives" exact component={ActivityList}></Route>
+                        <Route path="/activites" exact component={ActivityList}></Route>
                         <Route path="/activity/:aid" exact component={ActivityDetail}></Route>
                         <Route path="/personal" exact component={Personal}></Route>
                         <Route path="/points/exchange" exact component={PointsExchange} ></Route>
