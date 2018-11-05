@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getHomeDataAction } from '../../store/actionCreators';
 import Banner from '../../components/banner';
-import Profile from '../../components/profile';
+import CompanyProlfile from '../../components/companyProlfile';
 import Project from '../../components/project';
 import Footer from '../../components/footer';
 
@@ -20,7 +20,7 @@ class Home extends PureComponent {
         return (
             <HomeWrap>
                 <Banner />
-                <Profile />
+                <CompanyProlfile />
                 <div className="projectWrap">
                     <div className="hotRecommended">
                         {

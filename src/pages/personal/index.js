@@ -13,7 +13,6 @@ class Personal extends PureComponent {
     render() {
         let { personal_info } = this.props;
         const info = personal_info.toJS();
-console.log('info', info);
 
         return (
             <PersionalWrap>
@@ -33,7 +32,7 @@ console.log('info', info);
                         <span>我的报名</span>
                     </div>
                     <div className="item">
-                        <span>个人信息</span> 
+                        <Link to="/profile">个人信息</Link> 
                     </div>
                     <div className="item">
                         <span>邀请好友</span>

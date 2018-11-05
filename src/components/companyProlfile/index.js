@@ -6,7 +6,7 @@ import {
 } from './style';
 
 
-class Profile extends PureComponent {
+class CompanyProlfile extends PureComponent {
     render() {
         let { company_profile } = this.props;
         let profileList = company_profile.toJS();
@@ -58,4 +58,4 @@ const mapDispatch = (dispatch) => ({
 
 })
 
-export default connect( mapState, mapDispatch )( Profile );
+export default connect( mapState, mapDispatch )( CompanyProlfile );

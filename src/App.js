@@ -11,6 +11,7 @@ import ActivityList from './pages/activityList';
 import ActivityDetail from './pages/activityDetail/index';
 import Personal from './pages/personal';
 import PointsExchange from './pages/pointsExchange';
+import Profile from './pages/profile';
 
 class App extends PureComponent {
     render() {
@@ -27,6 +28,7 @@ class App extends PureComponent {
                         <Route path="/activity/:aid" exact component={ActivityDetail}></Route>
                         <Route path="/personal" exact component={Personal}></Route>
                         <Route path="/points/exchange" exact component={PointsExchange} ></Route>
+                        <Route path="/profile" exact component={Profile}></Route>
                     </Fragment>
                 </BrowserRouter>
             </Provider>
