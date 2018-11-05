@@ -35,7 +35,7 @@ class Personal extends PureComponent {
                         <Link to="/profile">个人信息</Link> 
                     </div>
                     <div className="item">
-                        <span>邀请好友</span>
+                        <Link to="/invite">邀请好友</Link>
                     </div>
                     <div className="item">
                         <span>在线客服</span>
