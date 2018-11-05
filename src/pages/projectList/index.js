@@ -10,26 +10,30 @@ import { getProjectListAction } from '../../store/actionCreators';
 class ProjectList extends PureComponent {
     render() {
         let { list } = this.props;
-        let proList = list.toJS();
+        let proList = (list && list.size > 0) ? list.toJS() : [];
 
-        return (
-            <ProjectWrap>
-                <Header>
-                    {
-                        <span show_back='show'>优质项目</span>
-                    }
-                </Header>
-                <Fragment>
-                    {
-                        proList.map((pro, index) => {
-                            return (
-                                <Project key={pro.id} target={pro} />
-                            )
-                        })
-                    }
-                </Fragment>
-            </ProjectWrap>
-        )
+        if(proList.length > 0) {
+            return (
+                <ProjectWrap>
+                    <Header>
+                        {
+                            <span show_back='show'>优质项目</span>
+                        }
+                    </Header>
+                    <Fragment>
+                        {
+                            proList.map((pro, index) => {
+                                return (
+                                    <Project key={pro.id} target={pro} />
+                                )
+                            })
+                        }
+                    </Fragment>
+                </ProjectWrap>
+            )
+        } else {
+            return null
+        }
     }
     componentDidMount() {        
         this.props.initListPage();

@@ -16,7 +16,7 @@ class ActivityDetail extends PureComponent {
 
     render() {
         let { details } = this.props;
-        let info = details.toJS() || {};
+        let info = (details && details.size > 0) ? details.toJS() : {};
 
         return (
             <ActivityContainer>

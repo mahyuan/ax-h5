@@ -29,7 +29,7 @@ class ProjectDetail extends PureComponent {
     render() {
         let { info } = this.props;
         // match
-        let details = info && info.toJS();
+        let details = (info && info.size > 0) ? info.toJS() : {};
 
         return (
             <DetailConainter>
@@ -56,11 +56,11 @@ class ProjectDetail extends PureComponent {
                 <DetailFooter>
                     <span className="footerPrice">{details.price}</span>
                     <Link to={{
-                        pathname: `/detail/${this.pid}/consult`,
+                        pathname: `/project/${this.pid}/consult`,
                         // search: `?id=${this.pid}`
                     }} className="footerButton consult">咨询</Link>
                     <Link to={{
-                        pathname: `/detail/${this.pid}/apply`,
+                        pathname: `/project/${this.pid}/apply`,
                         // search: `?id=${this.pid}`
                     }} className="footerButton apply">报名</Link>                 
                 </DetailFooter>

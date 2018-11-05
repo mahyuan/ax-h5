@@ -10,6 +10,7 @@ import Apply from './pages/apply';
 import ActivityList from './pages/activityList';
 import ActivityDetail from './pages/activityDetail/index';
 import Personal from './pages/personal';
+import PointsExchange from './pages/pointsExchange';
 
 class App extends PureComponent {
     render() {
@@ -18,13 +19,14 @@ class App extends PureComponent {
                 <BrowserRouter>
                     <Fragment>
                         <Route path="/" exact component={Home}></Route>
-                        <Route path="/pro_list" exact component={ProjectList}></Route>
-                        <Route path="/detail/:pid" exact component={ProjectDetail}></Route>
-                        <Route path="/detail/:pid/consult" exact component={Consult}></Route>
-                        <Route path="/detail/:pid/apply" exact component={Apply}></Route>
-                        <Route path="/activity_list" exact component={ActivityList}></Route>
+                        <Route path="/projects" exact component={ProjectList}></Route>
+                        <Route path="/project/:pid" exact component={ProjectDetail}></Route>
+                        <Route path="/project/:pid/consult" exact component={Consult}></Route>
+                        <Route path="/project/:pid/apply" exact component={Apply}></Route>
+                        <Route path="/activitives" exact component={ActivityList}></Route>
                         <Route path="/activity/:aid" exact component={ActivityDetail}></Route>
                         <Route path="/personal" exact component={Personal}></Route>
+                        <Route path="/points/exchange" exact component={PointsExchange} ></Route>
                     </Fragment>
                 </BrowserRouter>
             </Provider>

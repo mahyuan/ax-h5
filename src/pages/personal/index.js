@@ -19,8 +19,8 @@ console.log('info', info);
                 <TopContent>
                     <div className="top_wrap">
                         <h3 className="total_integral">总积分</h3>
-                        <span className="integral">{info.integral}</span>
-                        <span className="integral_level">等级: {info.integ_level}</span>
+                        <span className="integral">{info.points}</span>
+                        <span className="integral_level">等级: {info.level}</span>
                         <button onClick={this.exchange} className="exchange_button">积分兑换</button>
                     </div>
                 </TopContent>
@@ -32,7 +32,7 @@ console.log('info', info);
                         <span>我的报名</span>
                     </div>
                     <div className="item">
-                        <span>个人信息</span>
+                        <span>个人信息</span> 
                     </div>
                     <div className="item">
                         <span>邀请好友</span>

@@ -7,7 +7,9 @@ import {
 
 class Project extends PureComponent {
     render() {
-        let { target }  = this.props;        
+        let { target }  = this.props;
+        
+        if(!target) return null;
         return (
             <ProjectWrap>
                 <div className="imgContent">
@@ -16,7 +18,7 @@ class Project extends PureComponent {
                 <div className="textContent">
                     <h3 className="overview">项目介绍</h3>
                     <p className="detail">{target.desc}</p>
-                    <Link to={`/detail/${target.id}`} className="toDetail">查看</Link>
+                    <Link to={`/project/${target.id}`} className="toDetail">查看</Link>
                 </div>
             </ProjectWrap>
         )

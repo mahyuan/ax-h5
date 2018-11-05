@@ -1,35 +1,35 @@
 {
     "code": 0,
     "data": {
-        "integral": 123121,
-        "integ_level": "V2",
-        "integral_explain": {
-            "integral_rule": "积分规则：1.每1积分可兑换人民币1元；2.每邀请好友报名成功，就可获得积分奖励",
+        "points": 123121,
+        "level": "V2",
+        "points_explain": {
+            "exchange_rule": "积分规则：1.每1积分可兑换人民币1元；2.每邀请好友报名成功，就可获得积分奖励",
             "level_rule": [
                 {
-                    "levt": "V1",
+                    "level": "V1",
                     "person_number": 0,
-                    "integral_total": 100
+                    "total_points": 100
                 },
                     {
-                    "levt": "V2",
+                    "level": "V2",
                     "person_number": 5,
-                    "integral_total": 200
+                    "total_points": 200
                 },
                     {
-                    "levt": "V3",
+                    "level": "V3",
                     "person_number": 10,
-                    "integral_total": 500
+                    "total_points": 500
                 },
                 {
-                    "levt": "V4",
+                    "level": "V4",
                     "person_number": 30,
-                    "integral_total": 1000
+                    "total_points": 1000
                 },
                 {
-                    "levt": "V5",
+                    "level": "V5",
                     "person_number": 50,
-                    "integral_total": 2000
+                    "total_points": 2000
                 }
             ]
         },

@@ -15,8 +15,7 @@ import {
 class Home extends PureComponent {
     render() {        
         const { home_pro_List } = this.props;
-        let proList = home_pro_List.toJS();
-        // let proList = [];
+        let proList = (home_pro_List && home_pro_List.size > 0) ? home_pro_List.toJS() : [];
         // proList.length = 2;
         return (
             <HomeWrap>
@@ -32,7 +31,7 @@ class Home extends PureComponent {
                                             <div className={`projectTag ${item.type==="recommend" ? "hot" : ""}`}>{item.tag} |<span>【{item.name}】</span></div>
                                             {
                                                 item.type === "quality" ?
-                                                <Link to="/pro_list" className="showMore">更多</Link> : ''
+                                                <Link to="/projects" className="showMore">更多</Link> : ''
                                             }
                                         </ProjectInfoTitle>
                                         <Project key={item.id} target={item}>{item.desc}</Project>
