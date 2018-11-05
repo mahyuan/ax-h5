@@ -23,38 +23,43 @@ class PointExplain extends PureComponent {
                     }
                 </Header>     
                 <PointsRule> 
-                    <div>
+                    <div className="points_rule_wrap">
                         {
                             explain.exchange_rule && explain.exchange_rule.map((rule, index) => {
                                 return (
-                                    <span key={index} className="exchange_item">{rule}</span>
+                                    <span key={index} className="points_rule_item">{rule}</span>
                                 )
                             })
                         }
                     </div>
                 </PointsRule>
                 <LevelRule>
-                    <div className="form_wrap">
-                        <div className="form_row">
-                            <span className="form_row_item">等级</span>
-                            <span className="form_row_item">人数</span>
-                            <span className="form_row_item">积分</span>
-                        </div>
+                    <h3 className="rule_title">等级规则</h3>
+                    <table className="form_wrap" border="1" width="100%">
+                        <thead>
+                            <tr className="form_row">
+                                <td className="form_row_item item">等级</td>
+                                <td className="form_row_item item">人数</td>
+                                <td className="form_row_item item3">积分</td>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {
                             explain.level_rule && explain.level_rule.map((item, index) => {
                                 return (
-                                    <div key={index} className="form_row">
-                                        <span className="form_row_item">{item.level}</span>
-                                        <span className="form_row_item">{item.person_number}</span>
-                                        <span className="form_row_item">{item.total_points}</span>
-                                    </div>
+                                    <tr key={index} className="form_row">
+                                        <td className="form_row_item item">{item.level}</td>
+                                        <td className="form_row_item item">{item.person_number}</td>
+                                        <td className="form_row_item item3">每报名一人得：{item.total_points}分</td>
+                                    </tr>
                                 )
                             })
                         }
-                    </div>
+                        </tbody>
+                    </table>
                 </LevelRule>
                 <InviteContent>
-
+                    <button className="invite_button">立即邀请</button>
                 </InviteContent>
             </ExplainWrap>
         )
