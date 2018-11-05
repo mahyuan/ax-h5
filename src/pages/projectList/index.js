@@ -5,7 +5,7 @@ import Header from '../../components/header';
 import {
     ProjectWrap,
 } from './style';
-import { getProjectListAction } from './store/actionCreators';
+import { getProjectListAction } from '../../store/actionCreators';
 
 class ProjectList extends PureComponent {
     render() {
