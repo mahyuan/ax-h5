@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
     CommonHeader,
 } from './style';
@@ -14,7 +14,7 @@ class Header extends PureComponent {
     render() {
         let goBack = () => {
             let show = this.props.children.props.show_back || null;            
-            if(show == 'show') {
+            if(show === 'show') {
                 return ( <span className="back" onClick={() => this.history.goBack()}>返回</span>)
             } else {
                 return null

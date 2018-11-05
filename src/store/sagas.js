@@ -51,7 +51,7 @@ function* fetchDetail(action) {
         let data = require('../assets/api/project_list.json');
         let pid = action.pid;        
         data = data.list;
-        let info = pid && data.find(item => item.id == pid);                
+        let info = pid && data.find(item => item.id === pid);                
         yield put(initDetailAction(info));
     }
 }

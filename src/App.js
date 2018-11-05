@@ -12,9 +12,6 @@ import ActivityItem from './pages/activityDetail';
 import Personal from './pages/personal';
 
 class App extends PureComponent {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <Provider store={store}>

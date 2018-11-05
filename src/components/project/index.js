@@ -6,10 +6,6 @@ import {
 } from './style';
 
 class Project extends PureComponent {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let { target }  = this.props;        
         return (

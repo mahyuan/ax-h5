@@ -32,7 +32,7 @@ class Home extends PureComponent {
                                             <div className={`projectTag ${item.type==="recommend" ? "hot" : ""}`}>{item.tag} |<span>【{item.name}】</span></div>
                                             {
                                                 item.type === "quality" ?
-                                                <Link to="/list" className="showMore">更多</Link> : ''
+                                                <Link to="/pro_list" className="showMore">更多</Link> : ''
                                             }
                                         </ProjectInfoTitle>
                                         <Project key={item.id} target={item}>{item.desc}</Project>

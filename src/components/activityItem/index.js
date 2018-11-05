@@ -14,7 +14,7 @@ class ActivityItem extends PureComponent {
                 <div className="item_content">
                     <Link to={`/actitity/${aid}`}>
                         <div className="activity_banner">
-                            <img className="banner_image" src={item.banner}/>
+                            <img className="banner_image" src={item.banner} alt="activity banner" />
                         </div>
                     </Link>
                     <h3 className="item_title">{item.title}</h3>

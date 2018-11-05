@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import {
     DetailConainter,
@@ -19,7 +19,7 @@ class ProjectDetail extends PureComponent {
         if(imgs instanceof Array && imgs.length ) {
             return imgs.map((item, index) => {
                 return (
-                    <img key={index} className="images" src={item} />
+                    <img key={index} className="images" src={item} alt="project images" />
                 )
             }) 
         } else {
@@ -27,7 +27,8 @@ class ProjectDetail extends PureComponent {
         }
     }
     render() {
-        let { info, match } = this.props;
+        let { info } = this.props;
+        // match
         let details = info && info.toJS();
 
         return (

@@ -7,12 +7,6 @@ import {
 } from './style';
 
 class Consult extends PureComponent {
-    constructor(props) {
-        super(props);
-        // this.params = new URLSearchParams(location.search);
-        // console.log(this.params.get("id"));
-        
-    }
     render() {
         return (
             <ConsultWrap>
