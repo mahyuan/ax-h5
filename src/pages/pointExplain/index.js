@@ -22,16 +22,41 @@ class PointExplain extends PureComponent {
                         <span show_back="show">积分说明</span>
                     }
                 </Header>     
-                <PointsRule>
-                    dasfd 
+                <PointsRule> 
+                    <div>
+                        {
+                            explain.exchange_rule && explain.exchange_rule.map((rule, index) => {
+                                return (
+                                    <span key={index} className="exchange_item">{rule}</span>
+                                )
+                            })
+                        }
+                    </div>
                 </PointsRule>
                 <LevelRule>
-                    
+                    <div className="form_wrap">
+                        <div className="form_row">
+                            <span className="form_row_item">等级</span>
+                            <span className="form_row_item">人数</span>
+                            <span className="form_row_item">积分</span>
+                        </div>
+                        {
+                            explain.level_rule && explain.level_rule.map((item, index) => {
+                                return (
+                                    <div key={index} className="form_row">
+                                        <span className="form_row_item">{item.level}</span>
+                                        <span className="form_row_item">{item.person_number}</span>
+                                        <span className="form_row_item">{item.total_points}</span>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </LevelRule>
                 <InviteContent>
 
                 </InviteContent>
-            </ExplainWrap>             
+            </ExplainWrap>
         )
     }
     componentDidMount() {
