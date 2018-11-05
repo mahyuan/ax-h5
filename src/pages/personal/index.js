@@ -29,7 +29,7 @@ class Personal extends PureComponent {
                         <Link to='/points/explain'>积分说明</Link>
                     </div>
                     <div className="item">
-                        <span>我的报名</span>
+                        <Link to="/applies">我的报名</Link>
                     </div>
                     <div className="item">
                         <Link to="/profile">个人信息</Link> 
@@ -39,6 +39,9 @@ class Personal extends PureComponent {
                     </div>
                     <div className="item">
                         <span>在线客服</span>
+                    </div>
+                    <div className="item">
+                        <span>客服热线</span>
                     </div>
                 </MainContent>
                 <Footer current={this.props.match.path}></Footer>

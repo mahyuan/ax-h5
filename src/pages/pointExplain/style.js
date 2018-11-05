@@ -3,20 +3,25 @@ import Styled from 'styled-components';
 export const ExplainWrap = Styled.div`
     position: relative;
     display: block;
+    box-sizing: border-box;
 `
 export const PointsRule = Styled.div`
     position: relative;
     display: block;
+    width: 100%;
     box-sizing: border-box;
     margin-top: 0.8rem;
     padding: 0.3rem 0.2rem;
     .points_rule_wrap {
-        dispplay: inline-block;
+        position: relative;
+        display: inline-block;
         width: 100%;
+        box-sizing: border-box;
         line-height: 0.4rem;
         .points_rule_item {
             display: inline-block;
             width: 100%;
+            box-sizing: border-box;
             height: 0.4rem;
             line-height: 0.4rem;
             padding: 0 0.2rem;
@@ -64,10 +69,13 @@ export const InviteContent = Styled.div`
     position: relative;
     display: inline-block;
     width: 100%;
+    // padding: 0.3rem 0.2rem;
     margin: 0.3rem 0;
     padding: 0 0.2rem;
     text-align: center;
+    box-sizing: border-box;
     .invite_button {
+        display: inline-block;
         width: 2rem;
         height: 0.6rem;
         line-height: 0.6rem;
