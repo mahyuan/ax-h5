@@ -43,8 +43,9 @@
                 }
             ]
         },
-        "person_info": {
-            "user_name": "mhyfsdfse sd",
+        "person_profile": {
+            "uid": 100,
+            "user_name": "Jacks Look",
             "mobile": "1213344555",
             "email": "1518888888@163.com",
             "school": "北京xxx大学"
