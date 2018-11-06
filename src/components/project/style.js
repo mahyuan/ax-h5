@@ -56,7 +56,7 @@ export const ProjectWrap = Styled.div`
             text-align: center;
             border-radius: 0.1rem;
             background-color: #88c7e6;
-            line-height: 0.34rem;
+            line-height: 0.4rem;
             color: #fff;
             border: 0.01rem solid #333;
         }
