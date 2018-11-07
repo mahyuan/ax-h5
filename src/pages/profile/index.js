@@ -10,6 +10,12 @@ import {
 } from './style';
 
 class Profile extends PureComponent {
+    componentDidMount() {
+        console.log('this.props.personal_info', this.props.personal_info);
+        
+        this.props.getProfile(this.props.personal_info);
+    }
+
     render() {
         let { personal_info } = this.props;
         let profile = (personal_info && personal_info.size > 0) ? personal_info.toJS().person_profile : {};
@@ -60,11 +66,7 @@ class Profile extends PureComponent {
             ) : null
         )
     }
-    componentDidMount() {
-        console.log('this.props.personal_info', this.props.personal_info);
-        
-        this.props.getProfile(this.props.personal_info);
-    }
+
 }
 
 const mapState = (state) => ({

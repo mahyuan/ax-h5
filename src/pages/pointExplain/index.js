@@ -10,6 +10,12 @@ import {
 } from './style';
 
 class PointExplain extends PureComponent {
+    componentDidMount() {
+        console.log('this.props.explain', this.props.personal_info);
+        
+        this.props.getProfile(this.props.personal_info);
+    }
+    
     render() {
         let { personal_info } = this.props;
         let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
@@ -64,11 +70,7 @@ class PointExplain extends PureComponent {
             </ExplainWrap>
         )
     }
-    componentDidMount() {
-        console.log('this.props.explain', this.props.personal_info);
-        
-        this.props.getProfile(this.props.personal_info);
-    }
+
 }
 
 const mapState = (state) => ({

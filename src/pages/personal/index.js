@@ -10,6 +10,10 @@ import {
 } from './style';
 
 class Personal extends PureComponent {
+    componentDidMount() {
+        this.props.fetchPersonDeatil();
+    }
+    
     render() {
         let { personal_info } = this.props;
         const info = personal_info.toJS();
@@ -48,9 +52,7 @@ class Personal extends PureComponent {
             </PersionalWrap>
         )
     }
-    componentDidMount() {
-        this.props.fetchPersonDeatil();
-    }
+
 }
 const mapState = (state) => ({
     personal_info: state.get('personal_info')

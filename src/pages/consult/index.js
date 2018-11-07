@@ -7,6 +7,12 @@ import {
 } from './style';
 
 class Consult extends PureComponent {
+    // componentDidMount() {
+    //     this.paramsExample()
+    //     this.params = new URLSearchParams(location.search);
+    //     console.log(this.params.get("id"));
+    // }
+
     render() {
         return (
             <ConsultWrap>
@@ -31,11 +37,7 @@ class Consult extends PureComponent {
             </ConsultWrap>
         )
     }
-    // componentDidMount() {
-    //     this.paramsExample()
-    //     this.params = new URLSearchParams(location.search);
-    //     console.log(this.params.get("id"));
-    // }
+
     // paramsExample({ location }) {
     //     let params = new URLSearchParams(location.search);
     // }      

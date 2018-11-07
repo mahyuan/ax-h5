@@ -14,6 +14,15 @@ class Banner extends PureComponent {
         }
         this.toSlide = true;
     }
+
+    componentDidMount() {
+        this.setSlider();
+    }
+    
+    componentWillUnmount() {
+        this.toSlide = false;
+    }
+
     render() {
         let { banner } = this.props;
         let list = banner.toJS();
@@ -35,12 +44,7 @@ class Banner extends PureComponent {
             </BannerWrap>
         )
     }
-    componentDidMount() {
-        this.setSlider();
-    }
-    componentWillUnmount() {
-        this.toSlide = false;
-    }
+
     setSlider() {
         let timer = setInterval(() => {
             if(this.toSlide) {

@@ -19,6 +19,11 @@ class PointsExchange extends PureComponent {
         this.selectAllPointsHandle = this.selectAllPointsHandle.bind(this);
         this.pointInputChange = this.pointInputChange.bind(this);
     }
+
+    componentDidMount() {
+        this.props.getData();
+    }
+    
     render() {
         let { personal_info, exchangeHandle } = this.props;
         let { inputValue } = this.state;
@@ -67,9 +72,7 @@ class PointsExchange extends PureComponent {
             </ExchangeWrap>
         )
     }
-    componentDidMount() {
-        this.props.getData();
-    }
+
     pointInputChange(e) {
         let newValue  = e.target.value;
         if(/\D/.test(newValue)) return console.log(`please input number , ${newValue}`);
@@ -80,6 +83,7 @@ class PointsExchange extends PureComponent {
         this.selectedPoints = this.state.inputValue;
         console.log('this.selectedPoints', this.selectedPoints);
     }
+
     selectAllPointsHandle(points) {
         if(points) {
             this.selectedPoints = points;

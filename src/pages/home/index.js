@@ -13,6 +13,10 @@ import {
 } from './style';
 
 class Home extends PureComponent {
+    componentDidMount() {
+        this.props.getInit();
+    }
+    
     render() {        
         const { home_pro_List } = this.props;
         let proList = (home_pro_List && home_pro_List.size > 0) ? home_pro_List.toJS() : [];
@@ -44,9 +48,6 @@ class Home extends PureComponent {
                 <Footer current={this.props.match.path}></Footer>
             </HomeWrap>
         )
-    }
-    componentDidMount() {
-        this.props.getInit();
     }
     
 }

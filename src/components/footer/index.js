@@ -20,6 +20,7 @@ class Footer extends PureComponent {
             </DetailFooter>
         )
     }
+    
     setClass(path, str) {        
         let clazz = "footerBotton";
         if(path === str) {

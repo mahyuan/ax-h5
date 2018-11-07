@@ -8,6 +8,9 @@ import {
 } from './style';
 
 class Applies extends PureComponent {
+    componentDidMount() {
+    }
+    
     render() {
         let { personal_info } = this.props;
         // let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
@@ -26,8 +29,7 @@ class Applies extends PureComponent {
             </MyAppliedWrap>
         )
     }
-    componentDidMount() {
-    }
+
 }
 
 const mapState = (state) => ({

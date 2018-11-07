@@ -11,6 +11,10 @@ import {
 
 
 class Activity extends PureComponent {
+    componentWillMount() {
+        this.props.fetList();
+    }
+    
     render() {
         let { activ_list } = this.props;        
         const list =  (activ_list && activ_list.size > 0) ? activ_list.toJS() : [];
@@ -33,9 +37,7 @@ class Activity extends PureComponent {
             </ActivityWrap>
         )
     }
-    componentWillMount() {
-        this.props.fetList();
-    }
+
 }
 
 const mapState = (state) => ({

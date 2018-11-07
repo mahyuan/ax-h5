@@ -8,6 +8,9 @@ import {
 import { getProjectListAction } from '../../store/actionCreators';
 
 class ProjectList extends PureComponent {
+    componentDidMount() {        
+        this.props.initListPage();
+    }
     render() {
         let { list } = this.props;
         let proList = (list && list.size > 0) ? list.toJS() : [];
@@ -34,9 +37,6 @@ class ProjectList extends PureComponent {
         } else {
             return null
         }
-    }
-    componentDidMount() {        
-        this.props.initListPage();
     }
 }
 

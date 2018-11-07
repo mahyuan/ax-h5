@@ -15,17 +15,11 @@ class ProjectDetail extends PureComponent {
         this.pid = props.match.params.pid || '';
         this.renderImgs = this.renderImgs.bind(this);
     }
-    renderImgs(imgs) {
-        if(imgs instanceof Array && imgs.length ) {
-            return imgs.map((item, index) => {
-                return (
-                    <img key={index} className="images" src={item} alt="project images" />
-                )
-            }) 
-        } else {
-            return null;
-        }
+
+    componentDidMount() {
+        this.props.getProjectInfo(this.pid);
     }
+
     render() {
         let { info } = this.props;
         // match
@@ -67,8 +61,17 @@ class ProjectDetail extends PureComponent {
             </DetailConainter>
         )
     }
-    componentDidMount() {
-        this.props.getProjectInfo(this.pid);
+    
+    renderImgs(imgs) {
+        if(imgs instanceof Array && imgs.length ) {
+            return imgs.map((item, index) => {
+                return (
+                    <img key={index} className="images" src={item} alt="project images" />
+                )
+            }) 
+        } else {
+            return null;
+        }
     }
 }
 

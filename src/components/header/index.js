@@ -11,6 +11,7 @@ class Header extends PureComponent {
         super(props);
         this.history = createBrowserHistory();  
     }
+
     render() {
         let goBack = () => {
             let show = this.props.children.props.show_back || null;            

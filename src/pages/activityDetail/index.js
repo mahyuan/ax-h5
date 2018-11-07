@@ -14,6 +14,11 @@ class ActivityDetail extends PureComponent {
         console.log('props', props);
     }
 
+    componentDidMount() {
+        this.props.getActivityDateHandle(this.aid);
+        console.log('aid', this.aid); 
+    }
+
     render() {
         let { details } = this.props;
         let info = (details && details.size > 0) ? details.toJS() : {};
@@ -43,11 +48,6 @@ class ActivityDetail extends PureComponent {
                 </Content>
             </ActivityContainer>
         )
-    }
-
-    componentDidMount() {
-        this.props.getActivityDateHandle(this.aid);
-        console.log('aid', this.aid); 
     }
 
 }
