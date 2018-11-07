@@ -6,7 +6,7 @@ import {
     initProjectListAction,
     initDetailAction,
     getActivityListDataAction,
-    initActivityListPageAction,
+    // initActivityListPageAction,
     initActivityDetailAction,
     initPersonalPage,
 } from './actionCreators';
@@ -20,9 +20,9 @@ function* getHomeData() {
     } catch (e) {
         console.log('request failed:', e);
         console.log('get data by require JSON file.......');
-        let homePageData = require('../../server/mookhome_data.json');
-        const action = initHomePageAction(homePageData.data);
-        yield put (action);
+        // let homePageData = require('../../server/mook/home_data.json');
+        // const action = initHomePageAction(homePageData.data);
+        // yield put (action);
     }
 }
 
@@ -34,9 +34,9 @@ function* fetchProList(action) {
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get list by require JSON file.......');
-        let data = require('../../server/mookproject_list.json'); 
-        data = data.list;
-        yield put(initProjectListAction(data));
+        // let data = require('../../server/mook/project_list.json'); 
+        // data = data.list;
+        // yield put(initProjectListAction(data));
     }
 }
 
@@ -51,11 +51,11 @@ function* fetchProDetail(action) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
         
-        let data = require('../../server/mookproject_list.json');
-        let pid = (action.pid).toString(); 
-        data = data.list;
-        let info = pid && data.find(item => (item.id).toString() === pid);                
-        yield put(initDetailAction(info));
+        // let data = require('../../server/mook/project_list.json');
+        // let pid = (action.pid).toString(); 
+        // data = data.list;
+        // let info = pid && data.find(item => (item.id).toString() === pid);                
+        // yield put(initDetailAction(info));
     }
 }
 
@@ -68,9 +68,9 @@ function* fetchActivityListData() {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
         
-        let data = require('../../server/mookactivity_info.json');
-        data = data.data;
-        yield put(initActivityListPageAction(data));
+        // let data = require('../../server/mook/activity_info.json');
+        // data = data.data;
+        // yield put(initActivityListPageAction(data));
     }
 }
 
@@ -84,11 +84,11 @@ function* fetchActivityDetailData(action) {
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
-        let resp = require('../../server/mookactivity_info.json');
-        resp = resp.data
-        let aid = (action.aid).toString();        
-        let result = aid && resp.find(item => (item.id).toString() === aid);
-        yield put(initActivityDetailAction(result));
+        // let resp = require('../../server/mook/activity_info.json');
+        // resp = resp.data
+        // let aid = (action.aid).toString();        
+        // let result = aid && resp.find(item => (item.id).toString() === aid);
+        // yield put(initActivityDetailAction(result));
     }
 }
 
@@ -101,9 +101,9 @@ function* fetchPersonData() {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
         
-        let data = require('../../server/mookpersional.json');
-        data = data.data;
-        yield put(initPersonalPage(data));
+        // let data = require('../../server/mook/persional.json');
+        // data = data.data;
+        // yield put(initPersonalPage(data));
     }
 }
 

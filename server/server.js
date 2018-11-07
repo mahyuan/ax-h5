@@ -1,7 +1,7 @@
 let express = require('express');
 let fs = require('fs');
 const app = express();
-
+const PORT = 4003;
 const routes = [
     {
         name: "home_data",
@@ -39,6 +39,7 @@ routes.forEach((route, index) => {
     
     app.get(path, function(req, res) {
         res.setHeader('Content-Type', 'application/json;charset=utf-8');
+        res.setA
         fs.readFile('./mook/' + name + '.json', function(err, data) {
             if(err) throw err;
             res.json(JSON.parse(data));
@@ -46,19 +47,6 @@ routes.forEach((route, index) => {
     })
 })
 
-
-// routes.forEach((route, index) => {
-// 	let name = route.name;
-
-// 	app[route.type](route.url, function(req, res) {
-// 		res.setHeader('Content-Type', 'application/json;charset=utf-8');
-// 		fs.readFile('./' + name + '.json', function(err, data) {
-// 			if(err) throw err;
-// 			res.json(JSON.parse(data));
-// 		})
-// 	})
-// })
-
-app.listen(4003, () => {
-    console.log('mook server start at prot 4003.....');
+app.listen(PORT, () => {
+    console.log(`mook server start at prot ${PORT}.....`);
 })
