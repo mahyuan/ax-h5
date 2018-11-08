@@ -1,9 +1,9 @@
 
 
 {
-    "api":{
-        "domain" : "api.mhy.com"
-        , "protocol" : "http:"
-        , "port" : 4003
+    "api": {
+        "domain": "s.mhy.com",
+        "protocol": "http",
+        "port": 4003
     }
 }

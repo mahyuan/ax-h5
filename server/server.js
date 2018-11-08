@@ -38,8 +38,9 @@ routes.forEach((route, index) => {
     let { name, path } = route;
     
     app.get(path, function(req, res) {
+        res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
         res.setHeader('Content-Type', 'application/json;charset=utf-8');
-        res.setA
+        res.setHeader('Access-Control-Allow-Credentials', true);
         fs.readFile('./mook/' + name + '.json', function(err, data) {
             if(err) throw err;
             console.log(`get request from ${path}, response: ${data}`);

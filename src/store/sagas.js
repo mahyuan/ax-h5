@@ -9,12 +9,19 @@ import {
     initActivityDetailAction,
     initPersonalPage,
 } from './actionCreators';
-import site from '../config/site.json';
-let api = site.site;
+let site = require('../config/site.json');
+site = site.api;
+const app = `${site.protocol}://${site.domain}:${site.port}`;
 
 function* getHomeData() {
-    try {
-        const resp = yield axios.get('/api/home_data');
+    try { 
+        let resp = yield axios.get(`${app}/api/home_data`);
+        // , {
+        //     withCredentials: true
+        // }
+        resp = resp.data;
+        console.log('resp', resp);
+        
         const action = initHomePageAction(resp.data);
         yield put (action);
     } catch (e) {
@@ -28,7 +35,7 @@ function* getHomeData() {
 
 function* fetchProList(action) {
     try {
-        let resp = yield axios.get('/api/get_projet_list');
+        let resp = yield axios.get(`${app}/api/get_projet_list`);
         yield put(initProjectListAction(resp.list));
 
     } catch (e) {
@@ -43,7 +50,7 @@ function* fetchProList(action) {
 function* fetchProDetail(action) {
     try {
         let pid = (action.pid).toString;
-        let resp = yield axios.get(`/api/get_detail/${pid}`);
+        let resp = yield axios.get(`${app}/api/get_detail/${pid}`);
         resp = resp.data;
         let info = pid && resp.find(item => (item.id).toString() === pid);                
         yield put(initDetailAction(info));
@@ -61,7 +68,7 @@ function* fetchProDetail(action) {
 
 function* fetchActivityListData() {
     try {
-        let resp = yield axios.get('/api/activity/list');
+        let resp = yield axios.get(`${app}/api/activity/list`);
         resp = resp.data;
         yield put(initActivityListPageAction(resp));
     } catch (e) {
@@ -77,7 +84,7 @@ function* fetchActivityListData() {
 function* fetchActivityDetailData(action) {
     try {
         let aid = (action.aid).toString();
-        let resp = yield axios.get(`/api/activity/detail${aid}`)
+        let resp = yield axios.get(`${app}/api/activity/detail${aid}`);
         resp = resp.data;
         let result = aid && resp.find(item => (item.id).toString() === aid);
         yield put(initActivityDetailAction(result));
@@ -94,7 +101,7 @@ function* fetchActivityDetailData(action) {
 
 function* fetchPersonData() {
     try {
-        let resp = yield axios.get('/api/personal');
+        let resp = yield axios.get(`${app}/api/personal`);
         resp = resp.data;
         yield put(initPersonalPage(resp));
     } catch (e) {

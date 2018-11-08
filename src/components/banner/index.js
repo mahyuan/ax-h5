@@ -25,7 +25,10 @@ class Banner extends PureComponent {
 
     render() {
         let { banner } = this.props;
-        let list = ( list && list.size > 0) ? banner.toJS() : [];
+        console.log('banner', banner);
+        
+        let list = ( banner && banner.size > 0) ? banner.toJS() : [];
+        
         this.setState((state) => ({
             count: list.length
         }));
