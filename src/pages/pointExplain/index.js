@@ -10,16 +10,13 @@ import {
 } from './style';
 
 class PointExplain extends PureComponent {
-    componentDidMount() {
-        console.log('this.props.explain', this.props.personal_info);
-        
+    componentDidMount() {        
         this.props.getProfile(this.props.personal_info);
     }
-    
+
     render() {
         let { personal_info } = this.props;
         let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
-        console.log('explain' , explain);
         
         return (
             <ExplainWrap>

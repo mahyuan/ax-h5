@@ -15,7 +15,6 @@ let api = site.site;
 function* getHomeData() {
     try {
         const resp = yield axios.get('/api/home_data');
-        console.log('resp', resp);
         const action = initHomePageAction(resp.data);
         yield put (action);
     } catch (e) {

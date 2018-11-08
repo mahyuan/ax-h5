@@ -9,7 +9,6 @@ class ActivityItem extends PureComponent {
     render() {
         let { item } = this.props;
         let aid = item.id;
-        console.log('aid-=-=', aid);
         
         return (
             <ActivityItemWrap>

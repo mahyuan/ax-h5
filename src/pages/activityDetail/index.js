@@ -11,12 +11,10 @@ class ActivityDetail extends PureComponent {
     constructor(props) {
         super(props);
         this.aid = props.match.params.aid || '';
-        console.log('props', props);
     }
 
     componentDidMount() {
         this.props.getActivityDateHandle(this.aid);
-        console.log('aid', this.aid); 
     }
 
     render() {

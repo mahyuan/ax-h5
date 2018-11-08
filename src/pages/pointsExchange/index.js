@@ -81,7 +81,6 @@ class PointsExchange extends PureComponent {
         });
 
         this.selectedPoints = this.state.inputValue;
-        console.log('this.selectedPoints', this.selectedPoints);
     }
 
     selectAllPointsHandle(points) {
