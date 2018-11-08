@@ -13,4 +13,14 @@ export default (function (){
     }
     autoSize();
     window.addEventListener('resize', autoSize, false);
+
+    /**
+     * 添加meta: <meta name="referrer" content="no-referrer" />
+     * 取消阻止加载不同域的图片
+     */
+    let refMeta = document.createElement('meta');
+    refMeta.setAttribute('name', 'referrer');
+    refMeta.setAttribute('content', 'no-referrer');
+    let headElement = document.querySelector('head');
+    headElement.prepend(refMeta);
 })()
