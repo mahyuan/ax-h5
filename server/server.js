@@ -42,6 +42,8 @@ routes.forEach((route, index) => {
         res.setA
         fs.readFile('./mook/' + name + '.json', function(err, data) {
             if(err) throw err;
+            console.log(`get request from ${path}, response: ${data}`);
+            
             res.json(JSON.parse(data));
         })
     })

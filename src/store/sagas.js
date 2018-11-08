@@ -10,6 +10,8 @@ import {
     initActivityDetailAction,
     initPersonalPage,
 } from './actionCreators';
+import site from '../config/site.json';
+let api = site.site;
 
 function* getHomeData() {
     try {

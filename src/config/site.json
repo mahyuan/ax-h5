@@ -1,0 +1,9 @@
+
+
+{
+    "api":{
+        "domain" : "api.mhy.com"
+        , "protocol" : "http:"
+        , "port" : 4003
+    }
+}
