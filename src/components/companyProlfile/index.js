@@ -14,7 +14,8 @@ class CompanyProlfile extends PureComponent {
         return (
             <ProfileWrap>
             {
-                profileList.map((item, index) => {
+               profileList.length > 0 ? (
+                    profileList.map((item, index) => {
                     return (
                         <ProfileItem key={index}>
                             <div className="profileTitle">
@@ -28,6 +29,7 @@ class CompanyProlfile extends PureComponent {
                         </ProfileItem>
                     )
                 })
+               ) : null
             }
             </ProfileWrap>
         )

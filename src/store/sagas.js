@@ -15,13 +15,12 @@ const app = `${site.protocol}://${site.domain}:${site.port}`;
 
 function* getHomeData() {
     try { 
-        let resp = yield axios.get(`${app}/api/home_data`);
-        // , {
-        //     withCredentials: true
-        // }
-        resp = resp.data;
-        console.log('resp', resp);
+        let resp = yield axios.get(`${app}/api/home_data`, /*{
+            withCredentials: true
+        }*/ );
         
+        resp = resp.data;
+
         const action = initHomePageAction(resp.data);
         yield put (action);
     } catch (e) {
@@ -70,7 +69,7 @@ function* fetchActivityListData() {
     try {
         let resp = yield axios.get(`${app}/api/activity/list`);
         resp = resp.data;
-        yield put(initActivityListPageAction(resp));
+        yield put(initActivityListPageAction(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
@@ -84,9 +83,10 @@ function* fetchActivityListData() {
 function* fetchActivityDetailData(action) {
     try {
         let aid = (action.aid).toString();
-        let resp = yield axios.get(`${app}/api/activity/detail${aid}`);
+        let resp = yield axios.get(`${app}/api/activity/detail/${aid}`);
         resp = resp.data;
-        let result = aid && resp.find(item => (item.id).toString() === aid);
+        
+        let result = aid && resp.data.find(item => (item.id).toString() === aid);
         yield put(initActivityDetailAction(result));
     } catch (e) {
         console.log('get project lsit data failed', e);
@@ -103,7 +103,7 @@ function* fetchPersonData() {
     try {
         let resp = yield axios.get(`${app}/api/personal`);
         resp = resp.data;
-        yield put(initPersonalPage(resp));
+        yield put(initPersonalPage(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');

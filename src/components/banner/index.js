@@ -10,7 +10,6 @@ class Banner extends PureComponent {
         super(props);
         this.state = {
             currentKey: 0,
-            count: 0,
         }
         this.toSlide = true;
     }
@@ -24,27 +23,26 @@ class Banner extends PureComponent {
     }
 
     render() {
-        let { banner } = this.props;
-        console.log('banner', banner);
-        
+        let { banner, count } = this.props;        
         let list = ( banner && banner.size > 0) ? banner.toJS() : [];
-        
-        this.setState((state) => ({
-            count: list.length
-        }));
-        
         return (
-            <BannerWrap>
-                {
-                    list.map((item, index) => {
-                        return (
-                            <a className={ this.setClass(index, list.length) } key={item.id} href={item.jump_url} >
-                                <img className="bannerImg" src={item.img_url} alt="banner images" />
-                            </a>
-                        )
-                    })
-                }
-            </BannerWrap>
+            list.length > 0 ? (
+                <BannerWrap>
+                    {
+                        list.map((item, index) => {
+                            return (
+                                <a className={ this.setClass(index, count) } key={item.id} href={item.jump_url} >
+                                    <img className="bannerImg" src={item.img_url} alt="banner images" />
+                                </a>
+                            )
+                        })
+                    }
+                </BannerWrap>
+            ) : (
+                <a className="bannerItem" href='/' >
+                    <img className="bannerImg" src='#' alt="banner images" />
+                </a>
+            )
         )
     }
 
@@ -52,7 +50,7 @@ class Banner extends PureComponent {
         let timer = setInterval(() => {
             if(this.toSlide) {
                 let key = this.state.currentKey;
-                let count = this.state.count;
+                let count = this.props.count;
                 
                 if(count < 1) return;
                 if(key < count) key++;
@@ -80,9 +78,11 @@ class Banner extends PureComponent {
         }
         return `bannerItem ${clazz}`;
     }
+
 }
 const mapState = (state) => ({
-    banner: state.get('banner')
+    banner: state.get('banner'),
+    count: state.get('banner').size,
 })
 
 const mapDispatch = (dispatch) => ({

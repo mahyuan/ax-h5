@@ -18,6 +18,7 @@ class Activity extends PureComponent {
     render() {
         let { activ_list } = this.props;        
         const list =  (activ_list && activ_list.size > 0) ? activ_list.toJS() : [];
+        console.log('list', list);
         
         return (
             <ActivityWrap>
