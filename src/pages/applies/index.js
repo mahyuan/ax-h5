@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/header';
-import { getPersonalData } from '../../store/actionCreators';
+// import { getPersonalData } from '../../store/actionCreators';
 import {
     MyAppliedWrap,
     AppliedContent,
@@ -13,8 +13,8 @@ class Applies extends PureComponent {
     
     render() {
         let { personal_info } = this.props;
-        // let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
-        // console.log('explain' , explain);
+        let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
+        console.log('explain' , explain);
         
         return (
             <MyAppliedWrap>
