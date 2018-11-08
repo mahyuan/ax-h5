@@ -16,7 +16,7 @@ class Personal extends PureComponent {
     
     render() {
         let { personal_info } = this.props;
-        const info = personal_info.toJS();
+        const info = ( personal_info && personal_info.size > 0 ) ? personal_info.toJS() : {};
 
         return (
             <PersionalWrap>

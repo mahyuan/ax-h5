@@ -23,12 +23,12 @@ class PointsExchange extends PureComponent {
     componentDidMount() {
         this.props.getData();
     }
-    
+
     render() {
         let { personal_info, exchangeHandle } = this.props;
         let { inputValue } = this.state;
         
-        let info = personal_info ? personal_info.toJS() : {};
+        let info = ( personal_info && personal_info.size > 0 ) ? personal_info.toJS() : {};
         
         return (
             <ExchangeWrap>

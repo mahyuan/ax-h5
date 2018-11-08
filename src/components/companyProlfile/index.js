@@ -9,7 +9,7 @@ import {
 class CompanyProlfile extends PureComponent {
     render() {
         let { company_profile } = this.props;
-        let profileList = company_profile.toJS();
+        let profileList = (profileList && profileList.size > 0) ? company_profile.toJS() : [];
 
         return (
             <ProfileWrap>

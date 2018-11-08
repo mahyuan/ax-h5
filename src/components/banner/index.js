@@ -18,14 +18,14 @@ class Banner extends PureComponent {
     componentDidMount() {
         this.setSlider();
     }
-    
+
     componentWillUnmount() {
         this.toSlide = false;
     }
 
     render() {
         let { banner } = this.props;
-        let list = banner.toJS();
+        let list = ( list && list.size > 0) ? banner.toJS() : [];
         this.setState((state) => ({
             count: list.length
         }));
