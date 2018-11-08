@@ -11,10 +11,10 @@ import {
 
 
 class Activity extends PureComponent {
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetList();
     }
-    
+
     render() {
         let { activ_list } = this.props;        
         const list =  (activ_list && activ_list.size > 0) ? activ_list.toJS() : [];

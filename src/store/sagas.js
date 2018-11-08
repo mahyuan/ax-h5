@@ -5,8 +5,7 @@ import {
     initHomePageAction,
     initProjectListAction,
     initDetailAction,
-    getActivityListDataAction,
-    // initActivityListPageAction,
+    initActivityListPageAction,
     initActivityDetailAction,
     initPersonalPage,
 } from './actionCreators';
@@ -65,7 +64,7 @@ function* fetchActivityListData() {
     try {
         let resp = yield axios.get('/api/activity/list');
         resp = resp.data;
-        yield put(getActivityListDataAction(resp));
+        yield put(initActivityListPageAction(resp));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
