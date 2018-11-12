@@ -39,10 +39,13 @@ routes.forEach((route, index) => {
     
     app.get(path, function(req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Content-Type', 'application/json;charset=utf-8');
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,POST,DELETE');
-        res.setHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
+
+        if(req.method === 'OPTIONS') {
+            res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,POST,DELETE');
+            res.setHeader('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept');
+            res.setHeader('Content-Type', 'application/json;charset=utf-8');
+            res.setHeader('Access-Control-Allow-Credentials', true);
+        }
          
         fs.readFile('./mook/' + name + '.json', function(err, data) {
             if(err) throw err;
