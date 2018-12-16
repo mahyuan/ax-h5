@@ -14,11 +14,11 @@ site = site.api;
 const app = `${site.protocol}://${site.domain}:${site.port}`;
 
 function* getHomeData() {
-    try { 
+    try {
         let resp = yield axios.get(`${app}/api/home_data`, /*{
             withCredentials: true
         }*/ );
-        
+
         resp = resp.data;
 
         const action = initHomePageAction(resp.data);
@@ -40,7 +40,7 @@ function* fetchProList(action) {
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get list by require JSON file.......');
-        // let data = require('../../server/mook/project_list.json'); 
+        // let data = require('../../server/mook/project_list.json');
         // data = data.list;
         // yield put(initProjectListAction(data));
     }
@@ -49,20 +49,20 @@ function* fetchProList(action) {
 function* fetchProDetail(action) {
     try {
         let pid = action.pid;
-        
+
         let resp = yield axios.get(`${app}/api/get_detail/${pid}`);
         resp = resp.data;
         console.log('resp',resp);
-        let info = pid && resp.list.find(item => (item.id).toString() === pid);                
+        let info = pid && resp.list.find(item => (item.id).toString() === pid);
         yield put(initDetailAction(info));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
-        
+
         // let data = require('../../server/mook/project_list.json');
-        // let pid = (action.pid).toString(); 
+        // let pid = (action.pid).toString();
         // data = data.list;
-        // let info = pid && data.find(item => (item.id).toString() === pid);                
+        // let info = pid && data.find(item => (item.id).toString() === pid);
         // yield put(initDetailAction(info));
     }
 }
@@ -75,7 +75,7 @@ function* fetchActivityListData() {
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
-        
+
         // let data = require('../../server/mook/activity_info.json');
         // data = data.data;
         // yield put(initActivityListPageAction(data));
@@ -87,7 +87,7 @@ function* fetchActivityDetailData(action) {
         let aid = action.aid;
         let resp = yield axios.get(`${app}/api/activity/detail/${aid}`);
         resp = resp.data;
-        
+
         let result = aid && resp.data.find(item => (item.id).toString() === aid);
         yield put(initActivityDetailAction(result));
     } catch (e) {
@@ -95,7 +95,7 @@ function* fetchActivityDetailData(action) {
         console.log('get detail by require JSON file.......');
         // let resp = require('../../server/mook/activity_info.json');
         // resp = resp.data
-        // let aid = (action.aid).toString();        
+        // let aid = (action.aid).toString();
         // let result = aid && resp.find(item => (item.id).toString() === aid);
         // yield put(initActivityDetailAction(result));
     }
@@ -109,7 +109,7 @@ function* fetchPersonData() {
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
-        
+
         // let data = require('../../server/mook/persional.json');
         // data = data.data;
         // yield put(initPersonalPage(data));
