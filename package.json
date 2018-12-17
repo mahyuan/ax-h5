@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start && node server.js",
     "build": "react-scripts build",
+    "lint": "eslint --ext .js src",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -13,8 +14,6 @@
   },
   "dependencies": {
     "axios": "0.18.0",
-    "eslint": "^5.10.0",
-    "eslint-loader": "^2.1.1",
     "express": "4.16.4",
     "immutable": "4.0.0-rc.12",
     "react": "^16.6.0",
