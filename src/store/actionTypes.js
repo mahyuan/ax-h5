@@ -14,4 +14,6 @@ export default {
 	SUBMIT_APPLY: 'personal/submit_apply',
 	GET_MYAPPLY_INFO: 'apply/get_myapply_info',
 	INIT_MYAPPLY_PAGE: 'apply/init_myapply_page',
+	GET_INVITE_DATA: 'invitation/get_invite_data',
+	INIT_INVITE_PAGE: 'invitation/init_invite_page',
 }

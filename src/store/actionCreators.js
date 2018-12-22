@@ -130,3 +130,20 @@ export const initMyApplyPage = (data) => ({
 	type: actionTypes.INIT_MYAPPLY_PAGE,
 	apply_list: fromJS(data)
 })
+
+/**
+ * 获取邀请数据
+ * @param {*}
+ */
+export const getInviteInfoAction = () => ({
+	type: actionTypes.GET_INVITE_DATA
+})
+
+/**
+ * 初始化我的邀请页面
+ * @param {Object} data
+ */
+export const initInvitePage = (data) => ({
+	type: actionTypes.INIT_INVITE_PAGE,
+	invitation: fromJS(data)
+})

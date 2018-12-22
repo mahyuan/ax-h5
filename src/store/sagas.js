@@ -9,6 +9,7 @@ import {
     initActivityDetailAction,
 	initPersonalPage,
 	initMyApplyPage,
+	initInvitePage,
 } from './actionCreators';
 let site = require('../config/site.json');
 site = site.api;
@@ -142,6 +143,16 @@ function* fetchApplyList() {
 	}
 }
 
+function* fetchInvitationData() {
+	try {
+		let resp = yield axios.get(`${app}/api/invate/list`);
+		resp = resp.data;
+		yield put(initInvitePage(resp.data));
+	} catch (e) {
+		console.log('e', e);
+	}
+}
+
 function* sagas() {
     yield takeEvery(constants.GET_HOME_DATA, getHomeData);
     yield takeEvery(constants.GET_PRO_LIST, fetchProList);
@@ -151,6 +162,7 @@ function* sagas() {
 	yield takeEvery(constants.GET_ACTIVITY_DETAIL, fetchActivityDetailData);
 	yield takeEvery(constants.SUBMIT_APPLY, putSubmitApply);
 	yield takeEvery(constants.GET_MYAPPLY_INFO, fetchApplyList);
+	yield takeEvery(constants.GET_INVITE_DATA, fetchInvitationData);
 }
 
 export default sagas;

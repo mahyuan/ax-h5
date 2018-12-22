@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import { getPersonalData } from '../../store/actionCreators';
+import { InviteContent } from '../../components/InviteContent';
 import {
     ExplainWrap,
     PointsRule,
     LevelRule,
-    InviteContent,
+    // InviteContent,
 } from './style';
 
 class PointExplain extends PureComponent {
@@ -62,11 +63,12 @@ class PointExplain extends PureComponent {
                         </tbody>
                     </table>
                 </LevelRule>
-                <InviteContent>
+				<InviteContent />
+                {/* <InviteContent>
 					<Link to={`/invite`}>
 						<button className="invite_button">立即邀请</button>
 					</Link>
-                </InviteContent>
+                </InviteContent> */}
             </ExplainWrap>
         )
     }

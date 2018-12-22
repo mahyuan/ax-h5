@@ -1,0 +1,24 @@
+{
+	"code": 0,
+	"data": {
+		"user_id": 43322,
+		"total": 32,
+		"applyed": 14,
+		"point_receive": 33252,
+		"record": [{
+			"project_id": 1,
+			"apply_id": 3224555,
+			"record_date": "2017/12/27 12:42:56",
+			"mobile": 13344553444,
+			"is_applyed": 1,
+			"apply_date": "2017/12/27 13:45:34"
+		}, {
+			"project_id": 1,
+			"apply_id": 3224589,
+			"record_date": "2018/1/2 15:22:26",
+			"mobile": 13344553444,
+			"is_applyed": 0,
+			"apply_date": "2018/1/3 13:15:34"
+		}]
+	}
+}

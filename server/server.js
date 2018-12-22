@@ -45,6 +45,11 @@ const routes = [
 		name: "apply_list",
 		type: "get",
 		path: "/api/apply/list"
+	},
+	{
+		name: "invitation",
+		type: "get",
+		path: "/api/invate/list"
 	}
 ]
 
