@@ -8,7 +8,7 @@ import {
     initActivityListPageAction,
     initActivityDetailAction,
 	initPersonalPage,
-	/* submitApply, */
+	initMyApplyPage,
 } from './actionCreators';
 let site = require('../config/site.json');
 site = site.api;
@@ -105,7 +105,7 @@ function* fetchActivityDetailData(action) {
 function* fetchPersonData() {
     try {
         let resp = yield axios.get(`${app}/api/personal`);
-        resp = resp.data;
+		resp = resp.data;
         yield put(initPersonalPage(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
@@ -118,17 +118,27 @@ function* fetchPersonData() {
 }
 
 function* putSubmitApply(action) {
-	console.log('putSubmitApply', action)
+	console.log('putSubmitApply', action);
 	try {
 		let data = action.data.toJS();
-		let resp = yield axios.post(`${app}/api/persion/apply/submit`, {
+		let resp = yield axios.post(`${app}/api/apply/submit`, {
 			...data
 		});
 		// resp = resp.data;
 		// console.log('resp', resp)
 	} catch (e) {
 		console.log('e', e);
-		console.log('you had submit you apply request, but faile')
+		console.log('you had submit you apply request, but faile');
+	}
+}
+
+function* fetchApplyList() {
+	try {
+		let resp = yield axios.get(`${app}/api/apply/list`);
+		resp = resp.data;
+		yield put(initMyApplyPage(resp.data))
+	} catch (e) {
+		console.log('e', e);
 	}
 }
 
@@ -140,6 +150,7 @@ function* sagas() {
     yield takeEvery(constants.GET_PERSONAL_INFO, fetchPersonData);
 	yield takeEvery(constants.GET_ACTIVITY_DETAIL, fetchActivityDetailData);
 	yield takeEvery(constants.SUBMIT_APPLY, putSubmitApply);
+	yield takeEvery(constants.GET_MYAPPLY_INFO, fetchApplyList);
 }
 
 export default sagas;

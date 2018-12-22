@@ -9,7 +9,8 @@ const defaultState = fromJS({
     details: {}, // 项目详情页数据
     activ_list: [], // 活动列表
     activity_details: {}, //活动详情页数据
-    personal_info: {}, // 个人详情页数据
+	personal_info: {}, // 个人详情页数据
+	apply_list: [], // 我的申请列表
 })
 
 export default ( state = defaultState, action ) => {
@@ -36,6 +37,9 @@ export default ( state = defaultState, action ) => {
 
         case actionTypes.INIT_PERSONAL_PAGE:
             return state.set('personal_info', action.personal_info);
+
+		case actionTypes.INIT_MYAPPLY_PAGE:
+			return state.set('apply_list', action.apply_list);
 
         default:
             return state;
