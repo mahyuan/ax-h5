@@ -61,3 +61,7 @@ export const initPersonalPage = (data) => ({
     personal_info: fromJS(data)
 })
 
+export const submitApply = (data) => ({
+	type: actionTypes.SUBMIT_APPLY,
+	data: fromJS(data)
+})

@@ -7,7 +7,8 @@ import {
     initDetailAction,
     initActivityListPageAction,
     initActivityDetailAction,
-    initPersonalPage,
+	initPersonalPage,
+	/* submitApply, */
 } from './actionCreators';
 let site = require('../config/site.json');
 site = site.api;
@@ -116,13 +117,29 @@ function* fetchPersonData() {
     }
 }
 
+function* putSubmitApply(action) {
+	console.log('putSubmitApply', action)
+	try {
+		let data = action.data.toJS();
+		let resp = yield axios.post(`${app}/api/persion/apply/submit`, {
+			...data
+		});
+		// resp = resp.data;
+		// console.log('resp', resp)
+	} catch (e) {
+		console.log('e', e);
+		console.log('you had submit you apply request, but faile')
+	}
+}
+
 function* sagas() {
     yield takeEvery(constants.GET_HOME_DATA, getHomeData);
     yield takeEvery(constants.GET_PRO_LIST, fetchProList);
     yield takeEvery(constants.GET_DETAIL, fetchProDetail);
     yield takeEvery(constants.GET_ACTIVS_DATA, fetchActivityListData);
     yield takeEvery(constants.GET_PERSONAL_INFO, fetchPersonData);
-    yield takeEvery(constants.GET_ACTIVITY_DETAIL, fetchActivityDetailData);
+	yield takeEvery(constants.GET_ACTIVITY_DETAIL, fetchActivityDetailData);
+	yield takeEvery(constants.SUBMIT_APPLY, putSubmitApply);
 }
 
 export default sagas;

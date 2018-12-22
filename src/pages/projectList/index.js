@@ -8,7 +8,7 @@ import {
 import { getProjectListAction } from '../../store/actionCreators';
 
 class ProjectList extends PureComponent {
-    componentDidMount() {        
+    componentDidMount() {
         this.props.initListPage();
     }
     render() {
