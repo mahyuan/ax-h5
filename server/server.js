@@ -6,42 +6,48 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 const PORT = 4003;
 const routes = [
-    {
-        name: "home_data",
-        type: "get",
-        path: "/api/home_data"
-    },
-    {
-        name: "project_list",
-        type: "get",
-        path: "/api/get_projet_list"
-    },
-    {
-        name: "project_list",
-        type: "get",
-        path: '/api/get_detail/:pid'
-    },
-    {
-        name: "activity_info",
-        type: "get",
-        path: "/api/activity/list"
-    },
-    {
-        name: "activity_info",
-        type: "get",
-        path: "/api/activity/detail/:aid"
-    },
-    {
-        name: "persional",
-        type: "get",
-        path: "/api/personal"
+	{
+			name: "home_data",
+			type: "get",
+			path: "/api/home_data"
+	},
+	{
+			name: "project_list",
+			type: "get",
+			path: "/api/get_projet_list"
+	},
+	{
+			name: "project_list",
+			type: "get",
+			path: '/api/get_detail/:pid'
+	},
+	{
+			name: "activity_info",
+			type: "get",
+			path: "/api/activity/list"
+	},
+	{
+			name: "activity_info",
+			type: "get",
+			path: "/api/activity/detail/:aid"
+	},
+	{
+			name: "persional",
+			type: "get",
+			path: "/api/personal"
 	},
 	{
 		name: "putApply",
 		type: "post",
-		path: "/api/persion/apply/submit"
+		path: "/api/apply/submit"
+	},
+	{
+		name: "apply_list",
+		type: "get",
+		path: "/api/apply/list"
 	}
 ]
+
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept');
@@ -60,7 +66,6 @@ routes.forEach((route, index) => {
 	if (type === 'get') {
 		app.get(path, function(req, res) {
 			let { query } = req;
-			console.log('get')
 			fs.readFile('./mock/' + name + '.json', function(err, data) {
 				if(err) throw err;
 				res.json(JSON.parse(data));
@@ -71,7 +76,6 @@ routes.forEach((route, index) => {
 	if (type === 'post') {
 		app.post(path, function(req, res) {
 			let params = req.body;
-			console.log('post data', params)
 			res.send({
 				"code": 0,
 				"msg": ''

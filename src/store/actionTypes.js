@@ -12,4 +12,6 @@ export default {
     GET_PERSONAL_INFO: 'personal/get_personal_info',
 	INIT_PERSONAL_PAGE: 'personal/init_personal_page',
 	SUBMIT_APPLY: 'personal/submit_apply',
+	GET_MYAPPLY_INFO: 'apply/get_myapply_info',
+	INIT_MYAPPLY_PAGE: 'apply/init_myapply_page',
 }

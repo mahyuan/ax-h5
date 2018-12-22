@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
     ActivityItemWrap,
@@ -9,7 +8,7 @@ class ActivityItem extends PureComponent {
     render() {
         let { item } = this.props;
         let aid = item.id;
-        
+
         return (
             <ActivityItemWrap>
                 <div className="item_content">
@@ -32,13 +31,4 @@ class ActivityItem extends PureComponent {
     }
 }
 
-
-const mapState = (state) => ({
-
-})
-
-const mapDispatch = (dispath) => ({
-
-})
-
-export default connect(mapState, mapDispatch)(ActivityItem);
+export default ActivityItem;

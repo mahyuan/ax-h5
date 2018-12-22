@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import { getPersonalData } from '../../store/actionCreators';
 import {
@@ -10,22 +11,22 @@ import {
 } from './style';
 
 class PointExplain extends PureComponent {
-    componentDidMount() {        
+    componentDidMount() {
         this.props.getProfile(this.props.personal_info);
     }
 
     render() {
         let { personal_info } = this.props;
         let explain = (personal_info && personal_info.size > 0) ? personal_info.toJS().points_explain : {};
-        
+
         return (
             <ExplainWrap>
                 <Header>
                     {
                         <span show_back="show">积分说明</span>
                     }
-                </Header>     
-                <PointsRule> 
+                </Header>
+                <PointsRule>
                     <div className="points_rule_wrap">
                         {
                             explain.exchange_rule && explain.exchange_rule.map((rule, index) => {
@@ -62,7 +63,9 @@ class PointExplain extends PureComponent {
                     </table>
                 </LevelRule>
                 <InviteContent>
-                    <button className="invite_button">立即邀请</button>
+					<Link to={`/invite`}>
+						<button className="invite_button">立即邀请</button>
+					</Link>
                 </InviteContent>
             </ExplainWrap>
         )
@@ -80,10 +83,10 @@ const mapDispatch = (dispatch) => ({
             let action = getPersonalData();
             dispatch(action);
             console.log('1');
-            
+
         } else {
             console.log('2, explain');
-            
+
         }
     }
 })
