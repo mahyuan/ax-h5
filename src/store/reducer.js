@@ -15,7 +15,7 @@ const defaultState = fromJS({
 export default ( state = defaultState, action ) => {
     switch (action.type) {
         case actionTypes.INIT_HOME_PAGE:
-            let { banner, company_profile, home_pro_List } = action.data;            
+            let { banner, company_profile, home_pro_List } = action.data;
             return state.merge({
                 banner: fromJS(banner),
                 company_profile: fromJS(company_profile),
@@ -25,18 +25,18 @@ export default ( state = defaultState, action ) => {
         case actionTypes.INIT_PRO_LIST:
             return state.set("list", action.list);
 
-        case actionTypes.INIT_PRO_DETAIL:            
+        case actionTypes.INIT_PRO_DETAIL:
             return state.set('details', action.details);
 
         case actionTypes.INIT_ACTIVS_PAGE:
             return state.set('activ_list', action.activ_list);
-        
-        case actionTypes.INIT_ACTIVITY_DETAIL:        
+
+        case actionTypes.INIT_ACTIVITY_DETAIL:
             return state.set('activity_details', action.activity_details);
 
         case actionTypes.INIT_PERSONAL_PAGE:
             return state.set('personal_info', action.personal_info);
-            
+
         default:
             return state;
     }

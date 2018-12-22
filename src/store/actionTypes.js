@@ -10,5 +10,6 @@ export default {
     GET_ACTIVITY_DETAIL: 'activity/get_activity_details',
     INIT_ACTIVITY_DETAIL: 'activity/init_activity_details',
     GET_PERSONAL_INFO: 'personal/get_personal_info',
-    INIT_PERSONAL_PAGE: 'personal/init_personal_page',
+	INIT_PERSONAL_PAGE: 'personal/init_personal_page',
+	SUBMIT_APPLY: 'personal/submit_apply',
 }
