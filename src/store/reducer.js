@@ -11,6 +11,7 @@ const defaultState = fromJS({
     activity_details: {}, //活动详情页数据
 	personal_info: {}, // 个人详情页数据
 	apply_list: [], // 我的申请列表
+	invitation: {}, // 我的邀请数据
 })
 
 export default ( state = defaultState, action ) => {
@@ -40,6 +41,9 @@ export default ( state = defaultState, action ) => {
 
 		case actionTypes.INIT_MYAPPLY_PAGE:
 			return state.set('apply_list', action.apply_list);
+
+		case actionTypes.INIT_INVITE_PAGE:
+			return state.set('invitation', action.invitation);
 
         default:
             return state;
