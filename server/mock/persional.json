@@ -1,0 +1,55 @@
+{
+    "code": 0,
+    "data": {
+        "points": 123121,
+        "level": "V2",
+        "exchange_explain": [
+            "1.每1积分可兑换1元人民币；",            
+            "2.提交后添加MCD客服进行沟通；",
+            "3.兑换的现金将通过微信进行支付"
+        ],
+        "qr_url": "data:image/png;base64,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",
+        "points_explain": {
+            "exchange_rule": [
+                "积分规则：", 
+                "1.每1积分可兑换人民币1元；",
+                "2.每邀请好友报名成功，就可获得积分奖励"
+            ],
+            "level_rule": [
+                {
+                    "level": "V1",
+                    "person_number": 0,
+                    "total_points": 100
+                },
+                    {
+                    "level": "V2",
+                    "person_number": 5,
+                    "total_points": 200
+                },
+                    {
+                    "level": "V3",
+                    "person_number": 10,
+                    "total_points": 500
+                },
+                {
+                    "level": "V4",
+                    "person_number": 30,
+                    "total_points": 1000
+                },
+                {
+                    "level": "V5",
+                    "person_number": 50,
+                    "total_points": 2000
+                }
+            ]
+        },
+        "person_profile": {
+            "uid": 100,
+            "user_name": "Jacks Look",
+            "mobile": "1213344555",
+            "email": "1518888888@163.com",
+            "school": "北京xxx大学"
+        }
+
+    }
+}
