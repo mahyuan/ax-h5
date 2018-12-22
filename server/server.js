@@ -45,28 +45,24 @@ const routes = [
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Headers', 'origin, x-requested-with, content-type, accept');
+	if(req.method === 'OPTIONS') {
+		res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,POST,DELETE');
+		res.setHeader('Content-Type', 'application/json;charset=utf-8');
+		res.setHeader('Access-Control-Allow-Credentials', true);
+	}
 	next();
 })
+
 routes.forEach((route, index) => {
 	let { name, path } = route;
 	let type = route.type;
 
 	if (type === 'get') {
 		app.get(path, function(req, res) {
-			// console.log('req', req);
-			// console.log('res', res);
-			if(req.method === 'OPTIONS') {
-				res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,POST,DELETE');
-				res.setHeader('Content-Type', 'application/json;charset=utf-8');
-				res.setHeader('Access-Control-Allow-Credentials', true);
-			}
-
 			let { query } = req;
 			console.log('get')
-			fs.readFile('./mook/' + name + '.json', function(err, data) {
+			fs.readFile('./mock/' + name + '.json', function(err, data) {
 				if(err) throw err;
-				// console.log(`get request from ${path}, response: ${data}`);
-
 				res.json(JSON.parse(data));
 			})
 		})
