@@ -1,8 +1,10 @@
 import { takeEvery, put } from 'redux-saga/effects';
-import axios from 'axios';
+import qs from 'querystring';
+import URL from 'url';
 import constants from './actionTypes';
+import axios from '../utils/axios';
 import {
-    initHomePageAction,
+	initHomePageAction,
     initProjectListAction,
     initDetailAction,
     initActivityListPageAction,
@@ -11,18 +13,14 @@ import {
 	initMyApplyPage,
 	initInvitePage,
 } from './actionCreators';
-let site = require('../config/site.json');
-site = site.api;
-const app = `${site.protocol}://${site.domain}:${site.port}`;
+
 
 function* getHomeData() {
     try {
-        let resp = yield axios.get(`${app}/api/home_data`, /*{
+        let resp = yield axios.get(`/api/home_data`, /*{
             withCredentials: true
         }*/ );
-
         resp = resp.data;
-
         const action = initHomePageAction(resp.data);
         yield put (action);
     } catch (e) {
@@ -36,7 +34,7 @@ function* getHomeData() {
 
 function* fetchProList(action) {
     try {
-        let resp = yield axios.get(`${app}/api/get_projet_list`);
+        let resp = yield axios.get(`/api/get_projet_list`);
         resp = resp.data;
         yield put(initProjectListAction(resp.list));
     } catch (e) {
@@ -52,7 +50,7 @@ function* fetchProDetail(action) {
     try {
         let pid = action.pid;
 
-        let resp = yield axios.get(`${app}/api/get_detail/${pid}`);
+        let resp = yield axios.get(`/api/get_detail/${pid}`);
         resp = resp.data;
         console.log('resp',resp);
         let info = pid && resp.list.find(item => (item.id).toString() === pid);
@@ -71,7 +69,7 @@ function* fetchProDetail(action) {
 
 function* fetchActivityListData() {
     try {
-        let resp = yield axios.get(`${app}/api/activity/list`);
+        let resp = yield axios.get(`/api/activity/list`);
         resp = resp.data;
         yield put(initActivityListPageAction(resp.data));
     } catch (e) {
@@ -87,7 +85,7 @@ function* fetchActivityListData() {
 function* fetchActivityDetailData(action) {
     try {
         let aid = action.aid;
-        let resp = yield axios.get(`${app}/api/activity/detail/${aid}`);
+        let resp = yield axios.get(`/api/activity/detail/${aid}`);
         resp = resp.data;
 
         let result = aid && resp.data.find(item => (item.id).toString() === aid);
@@ -105,7 +103,7 @@ function* fetchActivityDetailData(action) {
 
 function* fetchPersonData() {
     try {
-        let resp = yield axios.get(`${app}/api/personal`);
+        let resp = yield axios.get(`/api/personal`);
 		resp = resp.data;
         yield put(initPersonalPage(resp.data));
     } catch (e) {
@@ -122,7 +120,7 @@ function* putSubmitApply(action) {
 	console.log('putSubmitApply', action);
 	try {
 		let data = action.data.toJS();
-		let resp = yield axios.post(`${app}/api/apply/submit`, {
+		let resp = yield axios.post(`/api/apply/submit`, {
 			...data
 		});
 		// resp = resp.data;
@@ -135,7 +133,7 @@ function* putSubmitApply(action) {
 
 function* fetchApplyList() {
 	try {
-		let resp = yield axios.get(`${app}/api/apply/list`);
+		let resp = yield axios.get(`/api/apply/list`);
 		resp = resp.data;
 		yield put(initMyApplyPage(resp.data))
 	} catch (e) {
@@ -145,7 +143,7 @@ function* fetchApplyList() {
 
 function* fetchInvitationData() {
 	try {
-		let resp = yield axios.get(`${app}/api/invate/list`);
+		let resp = yield axios.get(`/api/invate/list`);
 		resp = resp.data;
 		yield put(initInvitePage(resp.data));
 	} catch (e) {

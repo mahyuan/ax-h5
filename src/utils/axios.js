@@ -1,0 +1,35 @@
+'use strict'
+import axios from 'axios';
+import Cookies from 'js-cookie'
+import config from '../config/dev.env';
+const TokenKey = 'Ax_token';
+let token = Cookies.get(TokenKey)
+
+const service = axios.create({
+	timeout: 1000,
+	baseURL: `${config.PROTOCOL}://${config.DOMAIN}:${config.PORT}`,
+	// headers: {'X-Custom-Header': 'foobar'}
+})
+
+service.interceptors.request.use(
+	config => {
+		if (token) {
+			config.headers['token'] = token;
+		}
+		return config
+	},
+	err => {
+		Promise.reject(err)
+	}
+)
+
+service.interceptors.response.use(
+	resopnse => {
+		return resopnse;
+	},
+	err => {
+		Promise.reject(err);
+	}
+)
+
+export default service;
