@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import qs from 'querystring';
-import URL from 'url';
+import queryParse from '../utils/queryParse';
 import constants from './actionTypes';
 import axios from '../utils/axios';
 import {
@@ -16,11 +16,13 @@ import {
 
 
 function* getHomeData() {
-    try {
+	try {
+		// let query = queryParse(location.href);
         let resp = yield axios.get(`/api/home_data`, /*{
             withCredentials: true
         }*/ );
-        resp = resp.data;
+		resp = resp.data;
+		console.log('resp saga', resp.data)
         const action = initHomePageAction(resp.data);
         yield put (action);
     } catch (e) {
