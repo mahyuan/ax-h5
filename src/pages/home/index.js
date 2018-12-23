@@ -7,17 +7,17 @@ import Project from '../../components/project';
 import Footer from '../../components/footer';
 
 import { Link } from 'react-router-dom';
-import { 
+import {
     HomeWrap,
     ProjectInfoTitle,
 } from './style';
 
 class Home extends PureComponent {
     componentDidMount() {
-        this.props.getInit();
+		this.props.getInit();
     }
-    
-    render() {        
+
+    render() {
         const { home_pro_List } = this.props;
         let proList = (home_pro_List && home_pro_List.size > 0) ? home_pro_List.toJS() : [];
         // proList.length = 2;
@@ -49,7 +49,7 @@ class Home extends PureComponent {
             </HomeWrap>
         )
     }
-    
+
 }
 
 const mapState = (state) => ({
