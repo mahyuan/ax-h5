@@ -6,9 +6,8 @@ import { getActivityListDataAction } from '../../store/actionCreators';
 import Header from '../../components/header';
 import {
     ActivityWrap,
-    ActivityContent,
+    ActivityContent
 } from './style';
-
 
 class Activity extends PureComponent {
     componentDidMount() {
@@ -16,17 +15,17 @@ class Activity extends PureComponent {
     }
 
     render() {
-        let { activ_list } = this.props;
+        const { activ_list } = this.props;
         const list =  (activ_list && activ_list.size > 0) ? activ_list.toJS() : [];
         return (
             <ActivityWrap>
                 <Header>
-                    { <span show_back='show'>活动专区</span>  }
+                    {<span show_back='show'>活动专区</span>}
                 </Header>
                 <ActivityContent>
                     {
                         list.map((item, index) => {
-                            return <ActivityItem  key={item.id} item={item} />
+                            return <ActivityItem key={item.id} item={item} />;
                         })
                     }
                 </ActivityContent>
@@ -34,20 +33,19 @@ class Activity extends PureComponent {
                     <Footer current={this.props.match.path}></Footer>
                 </div>
             </ActivityWrap>
-        )
+        );
     }
-
 }
 
 const mapState = (state) => ({
-    activ_list: state.get('activ_list'),
-})
+    activ_list: state.get('activ_list')
+});
 
 const mapDispatch = (dispatch) => ({
     fetList() {
-        let action = getActivityListDataAction();
+        const action = getActivityListDataAction();
         dispatch(action);
     }
-})
+});
 
 export default connect(mapState, mapDispatch)(Activity);

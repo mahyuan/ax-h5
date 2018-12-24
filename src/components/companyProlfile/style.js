@@ -8,7 +8,7 @@ export const ProfileWrap = Styled.div`
     padding: 0.2rem 0.3rem;
     box-sizing: border-box;
     // border: 0.01rem dotted red;
-`
+`;
 export const ProfileItem = Styled.div`
     display: inline-block;
     width: 2rem;
@@ -37,5 +37,5 @@ export const ProfileItem = Styled.div`
         }
     }
 
-    
-`
+
+`;

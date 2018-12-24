@@ -6,12 +6,12 @@ export const ConsultWrap = Styled.div`
     height: 100vh;
     border: 0.01rem solid #eee;
     box-sizing: border-box;
-`
+`;
 export const MessageWrap = Styled.div`
     display: block;
     margin-top: 0.8rem;
     padding: 0.2rem;
-`
+`;
 export const InsetContainer = Styled.div`
     position: fixed;
     bottom: 0;
@@ -58,4 +58,4 @@ export const InsetContainer = Styled.div`
             border-radius: 0.1rem;
         }
     }
-`
+`;

@@ -5,7 +5,7 @@ export const ApplyWrap = Styled.div`
     position: relative;
     overflow: hidden;
     padding-top: 0.8rem;
-`
+`;
 
 export const AppliedContent = Styled.div`
     position: relative;
@@ -51,4 +51,4 @@ export const AppliedContent = Styled.div`
 		border-radius: 0.06rem;
 		border: 0.01rem solid #333;
 	}
-`
+`;

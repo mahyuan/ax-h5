@@ -22,17 +22,17 @@ export const BannerWrap = Styled.div`
         opacity: 1;
         &.current {
             transform: translate(0, 0) translateZ(0);
-            transition-duration: 300ms; 
-            z-index: 99; 
+            transition-duration: 300ms;
+            z-index: 99;
         }
-        &.next { 
+        &.next {
             transform: translate(7.5rem, 0) translateZ(0);
             transition-duration: 0ms;
-            z-index: 99; 
+            z-index: 99;
         }
         &.hide {
             transform: translate(-7.5rem, 0) translateZ(0);
-            transition-duration: 0ms; 
+            transition-duration: 0ms;
             z-index: 99;
         }
         .bannerImg{
@@ -41,4 +41,4 @@ export const BannerWrap = Styled.div`
         }
     }
 
-`
+`;

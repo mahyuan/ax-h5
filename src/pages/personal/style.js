@@ -4,7 +4,7 @@ export const PersionalWrap = Styled.div`
     position: reloative;
     display: block;
     box-sizing: border-box;
-`
+`;
 export const TopContent = Styled.div`
     display: block;
     padding: 0 auto 0.4rem;
@@ -64,7 +64,7 @@ export const TopContent = Styled.div`
             box-sizing: border-box;
         }
     }
-`
+`;
 
 export const MainContent = Styled.div`
     display: block;
@@ -80,4 +80,4 @@ export const MainContent = Styled.div`
         box-sizing: border-box;
         border-bottom: 0.01rem solid #ccc;
     }
-`
+`;

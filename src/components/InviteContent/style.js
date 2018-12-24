@@ -19,4 +19,4 @@ export const InviteWrap = Styled.div`
         background-color: #fff;
         border: 0.01rem solid #999;
     }
-`
+`;

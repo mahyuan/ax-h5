@@ -22,4 +22,4 @@ export const ApplyItemWrap = Styled.div`
 		width: 40%;
 		margin: 0.15rem 0;
 	}
-`
+`;

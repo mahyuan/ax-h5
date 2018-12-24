@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getActivityDetailAction } from '../../store/actionCreators';
 import {
     ActivityContainer,
-    Content,
+    Content
 } from './style';
 
 class ActivityDetail extends PureComponent {
@@ -18,47 +18,46 @@ class ActivityDetail extends PureComponent {
     }
 
     render() {
-        let { details } = this.props;
-        let info = (details && details.size > 0) ? details.toJS() : {};
+        const { details } = this.props;
+        const info = (details && details.size > 0) ? details.toJS() : {};
 
         return (
             <ActivityContainer>
                 <Header>
                     {
-                        <span show_back="show">活动专区</span>
+                        <span show_back='show'>活动专区</span>
                     }
                 </Header>
                 <Content>
-                    <div className="banner_content">
-                        <img className="banner_image" src={info.banner} alt="banner images" />
+                    <div className='banner_content'>
+                        <img className='banner_image' src={info.banner} alt='banner images' />
                     </div>
-                    <div className="main">
+                    <div className='main'>
                         {
                             info.more_info ? info.more_info.map((item, index) => {
                                 return (
-                                    <div key={index} className="image_content">
-                                        <img src={item} alt="more desc" />
+                                    <div key={index} className='image_content'>
+                                        <img src={item} alt='more desc' />
                                     </div>
-                                )
+                                );
                             }) : null
                         }
                     </div>
                 </Content>
             </ActivityContainer>
-        )
+        );
     }
-
 }
 
 const mapState = (state) => ({
-    details: state.get('activity_details'),
-})
+    details: state.get('activity_details')
+});
 
 const mapDispatch = (dispatch) => ({
     getActivityDateHandle(aid) {
-        let action = getActivityDetailAction(aid);
+        const action = getActivityDetailAction(aid);
         dispatch(action);
     }
-})
+});
 
 export default connect(mapState, mapDispatch)(ActivityDetail);

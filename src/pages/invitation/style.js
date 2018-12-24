@@ -30,7 +30,7 @@ export const InvitationWrap = Styled.div`
 		border-radius: 0.04rem;
 		box-sizing: border-box;
 	}
-`
+`;
 export const InvitationTotal = Styled.div`
 	margin-top: 0.8rem;
 	padding: 0.2rem 0.15rem;
@@ -40,4 +40,4 @@ export const InvitationTotal = Styled.div`
 		line-height: 0.6rem;
 		font-weight: bold;
 	}
-`
+`;

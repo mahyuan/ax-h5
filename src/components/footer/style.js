@@ -38,4 +38,4 @@ export const DetailFooter = Styled.div`
             }
         }
     }
-`
+`;

@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 
 export const ProfileWrap = Styled.div`
     position: relative;
-`
+`;
 export const ProfileContent = Styled.div`
     position: relative;
     display: block;
@@ -14,18 +14,18 @@ export const ProfileContent = Styled.div`
         width: 100%;
         line-height: 0.8rem;
         box-sizing: border-box;
-        border-bottom: 0.01rem solid #eee; 
+        border-bottom: 0.01rem solid #eee;
         .info_item {
             display: inline-block;
             width: 80%;
         }
         .change_button {
-            display: inline-block;    
+            display: inline-block;
             width: 20%;
             text-align: center;
         }
     }
-`
+`;
 
 export const ChangePassward = Styled.div`
     position: relative;
@@ -42,12 +42,12 @@ export const ChangePassward = Styled.div`
         margin: 0.2rem 0;
         text-align: center;
         box-sizing: border-box;
-        line-height: 0.5rem; 
+        line-height: 0.5rem;
         border: 0.01rem solid #999;
         border-radius: 0.1rem;
     }
-`
-    
+`;
+
 export const Logout = Styled.div`
     position: relative;
     display: inline-block;
@@ -67,6 +67,5 @@ export const Logout = Styled.div`
         border-radius: 0.1rem;
     }
 
-`
-
+`;
 

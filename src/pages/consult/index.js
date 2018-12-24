@@ -3,7 +3,7 @@ import Header from '../../components/header';
 import {
     ConsultWrap,
     MessageWrap,
-    InsetContainer,
+    InsetContainer
 } from './style';
 
 class Consult extends PureComponent {
@@ -25,22 +25,22 @@ class Consult extends PureComponent {
                     message at here!
                 </MessageWrap>
                 <InsetContainer>
-                    <textarea className="textarea" type="textarea" placeholder="输入消息..." />
-                    <div className="buttonContent">
-                        <span className="insertButton">语言</span>
-                        <span className="insertButton">照片</span>
-                        <span className="insertButton">拍照</span>
-                        <span className="insertButton">表情</span>
+                    <textarea className='textarea' type='textarea' placeholder='输入消息...' />
+                    <div className='buttonContent'>
+                        <span className='insertButton'>语言</span>
+                        <span className='insertButton'>照片</span>
+                        <span className='insertButton'>拍照</span>
+                        <span className='insertButton'>表情</span>
                     </div>
                 </InsetContainer>
 
             </ConsultWrap>
-        )
+        );
     }
 
     // paramsExample({ location }) {
     //     let params = new URLSearchParams(location.search);
-    // }      
+    // }
 }
 
 export default Consult;
