@@ -8,24 +8,25 @@ const defaultState = fromJS({
     list: [], // 项目列表页数据
     details: {}, // 项目详情页数据
     activ_list: [], // 活动列表
-    activity_details: {}, //活动详情页数据
-	personal_info: {}, // 个人详情页数据
-	apply_list: [], // 我的申请列表
-	invitation: {}, // 我的邀请数据
-})
+    activity_details: {}, // 活动详情页数据
+    personal_info: {}, // 个人详情页数据
+    apply_list: [], // 我的申请列表
+    invitation: {} // 我的邀请数据
+});
 
-export default ( state = defaultState, action ) => {
+export default (state = defaultState, action) => {
     switch (action.type) {
-		case actionTypes.INIT_HOME_PAGE:
-            let { banner, company_profile, home_pro_List } = action.data;
+        case actionTypes.INIT_HOME_PAGE: {
+            const { banner, company_profile, home_pro_List } = action.data;
             return state.merge({
                 banner: fromJS(banner),
                 company_profile: fromJS(company_profile),
-                home_pro_List: fromJS(home_pro_List),
-            })
+                home_pro_List: fromJS(home_pro_List)
+            });
+        }
 
         case actionTypes.INIT_PRO_LIST:
-            return state.set("list", action.list);
+            return state.set('list', action.list);
 
         case actionTypes.INIT_PRO_DETAIL:
             return state.set('details', action.details);
@@ -39,13 +40,13 @@ export default ( state = defaultState, action ) => {
         case actionTypes.INIT_PERSONAL_PAGE:
             return state.set('personal_info', action.personal_info);
 
-		case actionTypes.INIT_MYAPPLY_PAGE:
-			return state.set('apply_list', action.apply_list);
+        case actionTypes.INIT_MYAPPLY_PAGE:
+            return state.set('apply_list', action.apply_list);
 
-		case actionTypes.INIT_INVITE_PAGE:
-			return state.set('invitation', action.invitation);
+        case actionTypes.INIT_INVITE_PAGE:
+            return state.set('invitation', action.invitation);
 
         default:
             return state;
     }
-}
+};

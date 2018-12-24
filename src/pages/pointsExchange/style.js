@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 
 export const ExchangeWrap = Styled.div`
 
-`
+`;
 export const TopContent = Styled.div`
     display: block;
     margin-top: 0.8rem;
@@ -46,7 +46,7 @@ export const TopContent = Styled.div`
             box-sizing: border-box;
         }
     }
-`
+`;
 
 export const ExchangeMain = Styled.div`
     dosplay: block;
@@ -122,5 +122,5 @@ export const ExchangeMain = Styled.div`
             font-weight: bold;
         }
     }
-`
+`;
 

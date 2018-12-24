@@ -15,7 +15,7 @@ export const HomeWrap = Styled.div`
         background-color: #fff;
     }
 
-`
+`;
 export const ProjectInfoTitle = Styled.div`
     position: relative;
     display: inline-block;
@@ -52,4 +52,4 @@ export const ProjectInfoTitle = Styled.div`
             // color: #f00;
         }
     }
-`
+`;

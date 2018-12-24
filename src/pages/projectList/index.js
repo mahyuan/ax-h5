@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Project from '../../components/project';
 import Header from '../../components/header';
 import {
-    ProjectWrap,
+    ProjectWrap
 } from './style';
 import { getProjectListAction } from '../../store/actionCreators';
 
@@ -12,10 +12,10 @@ class ProjectList extends PureComponent {
         this.props.initListPage();
     }
     render() {
-        let { list } = this.props;
-        let proList = (list && list.size > 0) ? list.toJS() : [];
+        const { list } = this.props;
+        const proList = (list && list.size > 0) ? list.toJS() : [];
 
-        if(proList.length > 0) {
+        if (proList.length > 0) {
             return (
                 <ProjectWrap>
                     <Header>
@@ -28,27 +28,27 @@ class ProjectList extends PureComponent {
                             proList.map((pro, index) => {
                                 return (
                                     <Project key={pro.id} target={pro} />
-                                )
+                                );
                             })
                         }
                     </Fragment>
                 </ProjectWrap>
-            )
+            );
         } else {
-            return null
+            return null;
         }
     }
 }
 
 const mapState = (state) => ({
-    list: state.get('list'),
-})
+    list: state.get('list')
+});
 
 const mapDispatch = (dispatch) => ({
     initListPage() {
-        let action = getProjectListAction();
+        const action = getProjectListAction();
         dispatch(action);
     }
-})
+});
 
 export default connect(mapState, mapDispatch)(ProjectList);

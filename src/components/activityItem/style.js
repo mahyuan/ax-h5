@@ -57,5 +57,5 @@ export const ActivityItemWrap = Styled.div`
             white-space: nowrap;
         }
     }
-`
+`;
 

@@ -30,4 +30,4 @@ export const CommonHeader = Styled.div`
         font-size: 0.3rem;
         text-align: center;
     }
-`
+`;

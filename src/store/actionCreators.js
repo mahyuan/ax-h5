@@ -23,7 +23,7 @@ export const initHomePageAction = (data) => ({
  * @param {*}
  */
 export const getProjectListAction = () => ({
-    type: actionTypes.GET_PRO_LIST
+	type: actionTypes.GET_PRO_LIST
 })
 
 /**

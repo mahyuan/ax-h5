@@ -33,7 +33,7 @@ export const DetailConainter = Styled.div`
         color: #444;
         text-align: center;
     }
-`
+`;
 export const DetailContent = Styled.div`
     position: relative;
     display: block;
@@ -89,7 +89,7 @@ export const DetailContent = Styled.div`
             margin: 0 auto;
         }
     }
-`
+`;
 export const DetailFooter = Styled.div`
     position: fixed;
     bottom: 0;
@@ -129,4 +129,4 @@ export const DetailFooter = Styled.div`
     .consult {
 
     }
-`
+`;

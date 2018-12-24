@@ -62,4 +62,4 @@ export const ProjectWrap = Styled.div`
         }
     }
 
-`
+`;

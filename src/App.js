@@ -22,19 +22,19 @@ class App extends PureComponent {
             <Provider store={store}>
                 <BrowserRouter>
                     <Fragment>
-                        <Route path="/" exact component={Home}></Route>
-                        <Route path="/projects" exact component={ProjectList}></Route>
-                        <Route path="/project/:pid" exact component={ProjectDetail}></Route>
-                        <Route path="/project/:pid/consult" exact component={Consult}></Route>
-                        <Route path="/project/:pid/apply" exact component={Apply}></Route>
-                        <Route path="/activites" exact component={ActivityList}></Route>
-                        <Route path="/activity/:aid" exact component={ActivityDetail}></Route>
-                        <Route path="/personal" exact component={Personal}></Route>
-                        <Route path="/profile" exact component={Profile}></Route>
-                        <Route path="/points/exchange" exact component={PointsExchange} ></Route>
-                        <Route path="/points/explain" exact component={PointsExplain}></Route>
-                        <Route path="/invite" exact component={Invitation}></Route>
-                        <Route path="/applies" exact component={Applies}></Route>
+                        <Route path='/' exact component={Home}></Route>
+                        <Route path='/projects' exact component={ProjectList}></Route>
+                        <Route path='/project/:pid' exact component={ProjectDetail}></Route>
+                        <Route path='/project/:pid/consult' exact component={Consult}></Route>
+                        <Route path='/project/:pid/apply' exact component={Apply}></Route>
+                        <Route path='/activites' exact component={ActivityList}></Route>
+                        <Route path='/activity/:aid' exact component={ActivityDetail}></Route>
+                        <Route path='/personal' exact component={Personal}></Route>
+                        <Route path='/profile' exact component={Profile}></Route>
+                        <Route path='/points/exchange' exact component={PointsExchange} ></Route>
+                        <Route path='/points/explain' exact component={PointsExplain}></Route>
+                        <Route path='/invite' exact component={Invitation}></Route>
+                        <Route path='/applies' exact component={Applies}></Route>
                     </Fragment>
                 </BrowserRouter>
             </Provider>

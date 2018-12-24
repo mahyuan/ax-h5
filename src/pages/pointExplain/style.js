@@ -4,7 +4,7 @@ export const ExplainWrap = Styled.div`
     position: relative;
     display: block;
     box-sizing: border-box;
-`
+`;
 export const PointsRule = Styled.div`
     position: relative;
     display: block;
@@ -27,7 +27,7 @@ export const PointsRule = Styled.div`
             padding: 0 0.2rem;
         }
     }
-`
+`;
 export const LevelRule = Styled.div`
     position: relative;
     padding: 0.3rem 0.2rem;
@@ -64,4 +64,4 @@ export const LevelRule = Styled.div`
             }
         }
     }
-`
+`;

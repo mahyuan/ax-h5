@@ -4,7 +4,7 @@ export const ActivityContainer = Styled.div`
     position: relative;
     display: block;
     box-sizing: border-box;
-`
+`;
 export const Content = Styled.div`
     position: relative;
     display: block;
@@ -32,4 +32,4 @@ export const Content = Styled.div`
             }
         }
     }
-`
+`;
