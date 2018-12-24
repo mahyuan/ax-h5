@@ -18,7 +18,7 @@ class Project extends PureComponent {
                 <div className='textContent'>
                     <h3 className='overview'>项目介绍</h3>
                     <p className='detail'>{target.desc}</p>
-                    <Link to={`/project/${target.id}`} className='toDetail'>查看</Link>
+                    <Link to={`/project/${target._id}`} className='toDetail'>查看</Link>
                 </div>
             </ProjectWrap>
         );

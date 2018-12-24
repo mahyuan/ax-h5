@@ -7,7 +7,7 @@ import {
 class ActivityItem extends PureComponent {
     render() {
         const { item } = this.props;
-        const aid = item.id;
+        const aid = item._id;
 
         return (
             <ActivityItemWrap>

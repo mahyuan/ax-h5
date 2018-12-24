@@ -17,7 +17,7 @@ import {
 function * getHomeData() {
     try {
         // let query = queryParse(location.href);
-        let resp = yield axios.get(`/api/home_data`);
+        let resp = yield axios.get(`/api/index/info`);
         resp = resp.data;
         console.log('resp saga', resp.data);
         const action = initHomePageAction(resp.data);
@@ -33,7 +33,7 @@ function * getHomeData() {
 
 function * fetchProList(action) {
     try {
-        let resp = yield axios.get(`/api/get_projet_list`);
+        let resp = yield axios.get(`/api/projet/list`);
         resp = resp.data;
         yield put(initProjectListAction(resp.list));
     } catch (e) {
@@ -49,11 +49,11 @@ function * fetchProDetail(action) {
     try {
         const pid = action.pid;
 
-        let resp = yield axios.get(`/api/get_detail/${pid}`);
+        let resp = yield axios.get(`/api/project/detail/${pid}`);
         resp = resp.data;
         console.log('resp', resp);
-        const info = pid && resp.list.find(item => (item.id).toString() === pid);
-        yield put(initDetailAction(info));
+        // const info = pid && resp.list.find(item => (item.id).toString() === pid);
+        yield put(initDetailAction(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
@@ -87,8 +87,8 @@ function * fetchActivityDetailData(action) {
         let resp = yield axios.get(`/api/activity/detail/${aid}`);
         resp = resp.data;
 
-        const result = aid && resp.data.find(item => (item.id).toString() === aid);
-        yield put(initActivityDetailAction(result));
+        // const result = aid && resp.data.find(item => (item.id).toString() === aid);
+        yield put(initActivityDetailAction(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
