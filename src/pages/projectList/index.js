@@ -27,7 +27,7 @@ class ProjectList extends PureComponent {
                         {
                             proList.map((pro, index) => {
                                 return (
-                                    <Project key={pro.id} target={pro} />
+                                    <Project key={pro._id} target={pro} />
                                 );
                             })
                         }

@@ -7,7 +7,7 @@ import {
 class ActivityItem extends PureComponent {
     render() {
         const { item } = this.props;
-        const aid = item.id;
+        const aid = item._id;
 
         return (
             <ActivityItemWrap>
@@ -20,7 +20,7 @@ class ActivityItem extends PureComponent {
                     <h3 className='item_title'>{item.title}</h3>
                     <div className='date_wrap'>
                         <span className='date_text'>活动时间:</span>
-                        <span className='date_content'>{item.date}</span>
+                        <span className='date_content'>{item.start_time + '-' + item.end_time}</span>
                     </div>
                     {
                         item.is_over ? <button className='activity_outtime'>活动已结束</button> : ''
