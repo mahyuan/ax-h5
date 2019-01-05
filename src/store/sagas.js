@@ -17,11 +17,11 @@ import {
 function * getHomeData() {
     try {
         // const query = queryParse(location.href);
-        const params = {
+        const query = {
             page_index: 1,
             page_size: 20
         };
-        let resp = yield axios.get(`/api/index/info?${qs.stringify(params)}`);
+        let resp = yield axios.get(`/api/index/info?${qs.stringify(query)}`);
         resp = resp.data;
         console.log('resp saga', resp.data);
         const action = initHomePageAction(resp.data);
