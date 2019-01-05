@@ -64,7 +64,7 @@ class Banner extends PureComponent {
                     {
                         list.map((item, index) => {
                             return (
-                                <a className={this.setClass(index, count)} key={item.id} href={item.jump_url} >
+                                <a className={this.setClass(index, count)} key={item._id} href={item.jump_url} >
                                     <img className='bannerImg' src={item.img_url} alt='banner images' />
                                 </a>
                             );

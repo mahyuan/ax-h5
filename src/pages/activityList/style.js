@@ -9,4 +9,5 @@ export const ActivityContent = Styled.div`
     position: relative;
     display: block;
     margin-top: 0.8rem;
+    margin-bottom: 1rem;
 `;
