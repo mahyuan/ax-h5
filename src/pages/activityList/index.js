@@ -25,7 +25,7 @@ class Activity extends PureComponent {
                 <ActivityContent>
                     {
                         list.map((item, index) => {
-                            return <ActivityItem key={item.id} item={item} />;
+                            return <ActivityItem key={item._id} item={item} />;
                         })
                     }
                 </ActivityContent>

@@ -1,5 +1,5 @@
 import { takeEvery, put } from 'redux-saga/effects';
-// import qs from 'querystring';
+import qs from 'querystring';
 // import queryParse from '../utils/queryParse';
 import constants from './actionTypes';
 import axios from '../utils/axios';
@@ -16,8 +16,12 @@ import {
 
 function * getHomeData() {
     try {
-        // let query = queryParse(location.href);
-        let resp = yield axios.get(`/api/home_data`);
+        // const query = queryParse(location.href);
+        const params = {
+            page_index: 1,
+            page_size: 20
+        };
+        let resp = yield axios.get(`/api/index/info?${qs.stringify(params)}`);
         resp = resp.data;
         console.log('resp saga', resp.data);
         const action = initHomePageAction(resp.data);
@@ -33,7 +37,8 @@ function * getHomeData() {
 
 function * fetchProList(action) {
     try {
-        let resp = yield axios.get(`/api/get_projet_list`);
+        const query = { page_index: 1, page_size: 20 };
+        let resp = yield axios.get(`/api/projet/list?${qs.stringify(query)}`);
         resp = resp.data;
         yield put(initProjectListAction(resp.list));
     } catch (e) {
@@ -47,13 +52,15 @@ function * fetchProList(action) {
 
 function * fetchProDetail(action) {
     try {
-        const pid = action.pid;
-
-        let resp = yield axios.get(`/api/get_detail/${pid}`);
+        const query = {
+            pid: action.pid
+        };
+        let resp = yield axios.get(`/api/project/detail?${qs.stringify(query)}`);
         resp = resp.data;
         console.log('resp', resp);
-        const info = pid && resp.list.find(item => (item.id).toString() === pid);
-        yield put(initDetailAction(info));
+        // const info = pid && resp.list.find(item => (item.id).toString() === pid);
+        // yield put(initDetailAction(info));
+        yield put(initDetailAction(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
@@ -83,12 +90,15 @@ function * fetchActivityListData() {
 
 function * fetchActivityDetailData(action) {
     try {
-        const aid = action.aid;
-        let resp = yield axios.get(`/api/activity/detail/${aid}`);
+        const query = {
+            aid: action.aid
+        };
+        let resp = yield axios.get(`/api/activity/detail?${qs.stringify(query)}`);
         resp = resp.data;
-
-        const result = aid && resp.data.find(item => (item.id).toString() === aid);
-        yield put(initActivityDetailAction(result));
+        console.log('resp', resp);
+        // const result = aid && resp.data.find(item => (item.id).toString() === aid);
+        // yield put(initActivityDetailAction(result));
+        yield put(initActivityDetailAction(resp.data));
     } catch (e) {
         console.log('get project lsit data failed', e);
         console.log('get detail by require JSON file.......');
