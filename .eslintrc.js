@@ -194,6 +194,11 @@ module.exports = {
 		'object-curly-spacing': [2, 'always', {
 			objectsInObjects: false
 		}],
-		'array-bracket-spacing': [2, 'never']
+        'array-bracket-spacing': [2, 'never'],
+        'object-curly-newline': ['error', {
+            'multiline': true,
+            'minProperties': 3
+        }],
+        'comma-dangle': [2, 'always-multiline'],
 	}
 }
