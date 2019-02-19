@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3000 react-scripts start && node server.js",
+    "start": "PORT=3300 react-scripts start && node server.js",
     "build": "react-scripts build",
     "lint": "eslint --ext .js src",
     "test": "react-scripts test",
