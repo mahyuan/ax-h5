@@ -5,7 +5,7 @@ const TokenKey = 'Ax_token';
 const token = Cookies.get(TokenKey);
 
 const service = axios.create({
-    timeout: 1000,
+    timeout: 5000,
     baseURL: `${config.PROTOCOL}://${config.DOMAIN}:${config.PORT}`
     // headers: {'X-Custom-Header': 'foobar'}
 });
