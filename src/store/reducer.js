@@ -4,7 +4,7 @@ import { fromJS } from 'immutable';
 const defaultState = fromJS({
     banner: [], // 首页banner
     company_profile: [], // 首页公司介绍
-    home_pro_List: [], // 首页项目列表
+    home_pro_list: [], // 首页项目列表
     list: [], // 项目列表页数据
     details: {}, // 项目详情页数据
     activ_list: [], // 活动列表
@@ -17,11 +17,12 @@ const defaultState = fromJS({
 export default (state = defaultState, action) => {
     switch (action.type) {
         case actionTypes.INIT_HOME_PAGE: {
-            const { banner, company_profile, home_pro_List } = action.data;
+            const { banner, company_profile, home_pro_list } = action.data;
+            console.log('home_pro_list', home_pro_list);
             return state.merge({
                 banner: fromJS(banner),
                 company_profile: fromJS(company_profile),
-                home_pro_List: fromJS(home_pro_List)
+                home_pro_list: fromJS(home_pro_list)
             });
         }
 

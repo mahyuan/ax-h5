@@ -21,7 +21,7 @@ function * getHomeData() {
             page_index: 1,
             page_size: 20
         };
-        let resp = yield axios.get(`/api/index/info?${qs.stringify(query)}`);
+        let resp = yield axios.get(`/index/info?${qs.stringify(query)}`);
         resp = resp.data;
         console.log('resp saga', resp.data);
         const action = initHomePageAction(resp.data);
@@ -37,8 +37,8 @@ function * getHomeData() {
 
 function * fetchProList(action) {
     try {
-        const query = { page_index: 1, page_size: 20 };
-        let resp = yield axios.get(`/api/projet/list?${qs.stringify(query)}`);
+        const query = { banner_limit: 5, company_limit: 3, page_index: 1, page_size: 20 };
+        let resp = yield axios.get(`/project/list?${qs.stringify(query)}`);
         resp = resp.data;
         yield put(initProjectListAction(resp.list));
     } catch (e) {
@@ -55,7 +55,7 @@ function * fetchProDetail(action) {
         const query = {
             pid: action.pid
         };
-        let resp = yield axios.get(`/api/project/detail?${qs.stringify(query)}`);
+        let resp = yield axios.get(`/project/detail?${qs.stringify(query)}`);
         resp = resp.data;
         console.log('resp', resp);
         // const info = pid && resp.list.find(item => (item.id).toString() === pid);
@@ -75,7 +75,11 @@ function * fetchProDetail(action) {
 
 function * fetchActivityListData() {
     try {
-        let resp = yield axios.get(`/api/activity/list`);
+        const query = {
+            page_size: 10,
+            page_index: 1
+        }
+        let resp = yield axios.get(`/activity/list?${qs.stringify(query)}`);
         resp = resp.data;
         yield put(initActivityListPageAction(resp.data));
     } catch (e) {
@@ -93,7 +97,7 @@ function * fetchActivityDetailData(action) {
         const query = {
             aid: action.aid
         };
-        let resp = yield axios.get(`/api/activity/detail?${qs.stringify(query)}`);
+        let resp = yield axios.get(`/activity/detail?${qs.stringify(query)}`);
         resp = resp.data;
         console.log('resp', resp);
         // const result = aid && resp.data.find(item => (item.id).toString() === aid);
@@ -112,7 +116,7 @@ function * fetchActivityDetailData(action) {
 
 function * fetchPersonData() {
     try {
-        let resp = yield axios.get(`/api/personal`);
+        let resp = yield axios.get(`/personal`);
         resp = resp.data;
         yield put(initPersonalPage(resp.data));
     } catch (e) {
@@ -129,11 +133,11 @@ function * putSubmitApply(action) {
     console.log('putSubmitApply', action);
     try {
         const data = action.data.toJS();
-        const resp = yield axios.post(`/api/apply/submit`, {
+        const resp = yield axios.post(`/apply/submit`, {
             ...data
         });
         // resp = resp.data;
-        // console.log('resp', resp)
+        console.log('resp', resp)
     } catch (e) {
         console.log('e', e);
         console.log('you had submit you apply request, but faile');
@@ -142,7 +146,7 @@ function * putSubmitApply(action) {
 
 function * fetchApplyList() {
     try {
-        let resp = yield axios.get(`/api/apply/list`);
+        let resp = yield axios.get(`/apply/list`);
         resp = resp.data;
         yield put(initMyApplyPage(resp.data));
     } catch (e) {
@@ -152,7 +156,7 @@ function * fetchApplyList() {
 
 function * fetchInvitationData() {
     try {
-        let resp = yield axios.get(`/api/invate/list`);
+        let resp = yield axios.get(`/invate/list`);
         resp = resp.data;
         yield put(initInvitePage(resp.data));
     } catch (e) {

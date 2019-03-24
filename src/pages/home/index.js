@@ -18,8 +18,8 @@ class Home extends PureComponent {
     }
 
     render() {
-        const { home_pro_List } = this.props;
-        const proList = (home_pro_List && home_pro_List.size > 0) ? home_pro_List.toJS() : [];
+        const { home_pro_list } = this.props;
+        const proList = (home_pro_list && home_pro_list.size > 0) ? home_pro_list.toJS() : [];
         // proList.length = 2;
         return (
             <HomeWrap>
@@ -52,7 +52,7 @@ class Home extends PureComponent {
 }
 
 const mapState = (state) => ({
-    home_pro_List: state.get('home_pro_List')
+    home_pro_list: state.get('home_pro_list')
 });
 
 const mapDispatch = (dispatch) => {

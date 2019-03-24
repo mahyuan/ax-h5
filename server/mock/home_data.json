@@ -2,39 +2,39 @@
     "code": 0,
     "data": {
         "banner": [
-            { 
-                "id": 1, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4533/fc384bd68d23df5114c41c3ef12ba12dd000e244.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 1,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4533/fc384bd68d23df5114c41c3ef12ba12dd000e244.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 2, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4548/261804ae4ab744a7148bc40ef9da8e13850e6fdf.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 2,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4548/261804ae4ab744a7148bc40ef9da8e13850e6fdf.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 3, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4524/65fb6e8f81ccbbc7dacf5c380e0366a003ba7881.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 3,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4524/65fb6e8f81ccbbc7dacf5c380e0366a003ba7881.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 4, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4514/a9212731b77ad524cb832c35d314348ec0b66235.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 4,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4514/a9212731b77ad524cb832c35d314348ec0b66235.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 5, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4539/814816838070065013af51fac80e6a03e453a660.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 5,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4539/814816838070065013af51fac80e6a03e453a660.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 6, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4546/dd55f322074ccec0be40c927e0705ef137f848b2.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 6,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4546/dd55f322074ccec0be40c927e0705ef137f848b2.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             },
-            { 
-                "id": 7, 
-                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4537/e4fc8843fabbf17e6f5660eea8ce0661b00b3089.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540", 
+            {
+                "id": 7,
+                "img_url": "https://upload.jianshu.io/admin_banners/web_images/4537/e4fc8843fabbf17e6f5660eea8ce0661b00b3089.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
                 "jump_url": "#"
             }
         ],
@@ -52,7 +52,7 @@
                 "desc": "项目优势\n战略合作资源\n中国独家代理"
             }
         ],
-        "home_pro_List": [
+        "home_pro_list": [
             {
                 "id": 1,
                 "img": "https://hbimg.b0.upaiyun.com/82efd4f3384a21538e1304e1164198e40ed9af2617b47-fZFAhH_sq320",

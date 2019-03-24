@@ -1,8 +1,8 @@
 export default {
     NODE_ENV: 'development', // 'production'
-    DOMAIN: 's.mhy.com',
+    DOMAIN: 'localhost',
     PROTOCOL: 'http',
-    PORT: '4003',
+    PORT: '7001',
     TIMEOUT: 20000
 };
 
