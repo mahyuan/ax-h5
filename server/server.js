@@ -4,52 +4,52 @@ const fs = require('fs');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-const PORT = 4003;
+const PORT = 7001;
 const routes = [
     {
         name: 'home_data',
         type: 'get',
-        path: '/api/home_data'
+        path: '/index/info'
     },
     {
         name: 'project_list',
         type: 'get',
-        path: '/api/get_projet_list'
+        path: '/project/list'
     },
     {
         name: 'project_list',
         type: 'get',
-        path: '/api/get_detail/:pid'
+        path: '/get_detail/:pid'
     },
     {
         name: 'activity_info',
         type: 'get',
-        path: '/api/activity/list'
+        path: '/activity/list'
     },
     {
         name: 'activity_info',
         type: 'get',
-        path: '/api/activity/detail/:aid'
+        path: '/activity/detail/:aid'
     },
     {
         name: 'persional',
         type: 'get',
-        path: '/api/personal'
+        path: '/personal'
     },
     {
         name: 'putApply',
         type: 'post',
-        path: '/api/apply/submit'
+        path: '/apply/submit'
     },
     {
         name: 'apply_list',
         type: 'get',
-        path: '/api/apply/list'
+        path: '/apply/list'
     },
     {
         name: 'invitation',
         type: 'get',
-        path: '/api/invate/list'
+        path: '/invate/list'
     }
 ];
 
