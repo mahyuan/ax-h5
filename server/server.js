@@ -1,3 +1,6 @@
+/**
+ * 没有ax-server服务时，可以启动本地mock服务，npm run mock
+ */
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
