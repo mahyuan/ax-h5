@@ -1,9 +1,9 @@
 export default {
     NODE_ENV: 'development', // 'production'
-    DOMAIN: 's.mhynet.cn/',
+    DOMAIN: 's.mhynet.cn',
     // DOMAIN: 'localhost',
-    PROTOCOL: 'http',
-    PORT: '7001',
+    PROTOCOL: 'https',
+    PORT: '443',
     TIMEOUT: 20000
 };
 
