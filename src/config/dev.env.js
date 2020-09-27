@@ -3,7 +3,7 @@ export default {
     DOMAIN: 's.mhynet.cn',
     // DOMAIN: 'localhost',
     PROTOCOL: 'http',
-    PORT: '443',
+    PORT: 80,
     TIMEOUT: 20000
 };
 
