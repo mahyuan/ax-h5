@@ -15,6 +15,7 @@ import Profile from './pages/profile';
 import PointsExplain from './pages/pointExplain';
 import Invitation from './pages/invitation';
 import Applies from './pages/applies';
+import Login from './pages/login';
 
 class App extends PureComponent {
     render() {
@@ -35,6 +36,7 @@ class App extends PureComponent {
                         <Route path='/points/explain' exact component={PointsExplain}></Route>
                         <Route path='/invite' exact component={Invitation}></Route>
                         <Route path='/applies' exact component={Applies}></Route>
+                        <Route path='/login' exact component={Login}></Route>
                     </Fragment>
                 </BrowserRouter>
             </Provider>

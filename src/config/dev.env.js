@@ -1,5 +1,5 @@
 export default {
-    NODE_ENV: 'development', // 'production'
+    NODE_ENV: 'production',
     DOMAIN: 's.mhynet.cn',
     // DOMAIN: 'localhost',
     PROTOCOL: 'http',

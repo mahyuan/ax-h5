@@ -1,19 +1,19 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
 import config from '../config/dev.env';
-const TokenKey = 'Ax_token';
-const token = Cookies.get(TokenKey);
+import { getToken } from './auth'
+const baseUrl = `${config.PROTOCOL}://${config.DOMAIN}:${config.PORT}`
 
 const service = axios.create({
-    timeout: 5000,
-    baseURL: `${config.PROTOCOL}://${config.DOMAIN}:${config.PORT}`
-    // headers: {'X-Custom-Header': 'foobar'}
+    timeout: config.TIMEOUT || 20000,
+    withCredentials: true,
+    baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:7001' : baseUrl,
 });
 
 service.interceptors.request.use(
     config => {
+        const token = getToken()
         if (token) {
-            config.headers['token'] = token;
+            config.headers['token'] = token
         }
         return config;
     },
@@ -31,4 +31,4 @@ service.interceptors.response.use(
     }
 );
 
-export default service;
+export default service
